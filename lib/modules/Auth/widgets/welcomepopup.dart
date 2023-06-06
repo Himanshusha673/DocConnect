@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/services/api_requests.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/login/login_response_model.dart';
+import 'package:doc_connect/common_components/services/api_requests.dart';
+import 'package:doc_connect/modules/Auth/model/login/login_response_model.dart';
 
-import 'package:jatya_patient_mobile/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
-import 'package:jatya_patient_mobile/modules/Profile/screens/patient_update_profile.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
+import 'package:doc_connect/modules/Profile/screens/patient_update_profile.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
 class Welcomepopup extends StatelessWidget {
   Response<LoginResponseModel>? response;

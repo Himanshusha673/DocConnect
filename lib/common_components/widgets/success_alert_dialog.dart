@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/app_alert_dialog.dart';
+import 'package:doc_connect/common_components/widgets/app_alert_dialog.dart';
 
 class SuccessAlertDialog extends StatelessWidget {
   final String message;

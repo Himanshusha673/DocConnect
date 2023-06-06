@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:jatya_patient_mobile/modules/Reports/models/get_recent_report_response_model.dart';
-import 'package:jatya_patient_mobile/utils/constants/api_konstants.dart';
+import 'package:doc_connect/modules/Reports/models/get_recent_report_response_model.dart';
+import 'package:doc_connect/utils/constants/api_konstants.dart';
 
 class RecentReportsRepository {
   ///////////////////////////////////////////////////////////////////////////

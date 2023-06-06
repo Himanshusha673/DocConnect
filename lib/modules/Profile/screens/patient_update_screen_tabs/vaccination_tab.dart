@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/app_alert_dialog.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/vaccinations_bloc/vaccinations_bloc.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/start_consultation_alert.dart';
+import 'package:doc_connect/common_components/widgets/app_alert_dialog.dart';
+import 'package:doc_connect/modules/Profile/bloc/vaccinations_bloc/vaccinations_bloc.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/start_consultation_alert.dart';
 
 import '../../widgets/vaccinations/vaccination_form.dart';
 

@@ -2,16 +2,16 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:jatya_patient_mobile/modules/Profile/models/allergies/update_allergy.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/allergies/update_allergy_response.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/get_all_prev_reports/get_all_prev_repo.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/get_all_vaccination/get_all_vacc_spec_pat.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/allergies/get_allergies_model.dart';
+import 'package:doc_connect/modules/Profile/models/allergies/update_allergy.dart';
+import 'package:doc_connect/modules/Profile/models/allergies/update_allergy_response.dart';
+import 'package:doc_connect/modules/Profile/models/get_all_prev_reports/get_all_prev_repo.dart';
+import 'package:doc_connect/modules/Profile/models/get_all_vaccination/get_all_vacc_spec_pat.dart';
+import 'package:doc_connect/modules/Profile/models/allergies/get_allergies_model.dart';
 
-import 'package:jatya_patient_mobile/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/update_patient_model/update_pati_prof.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/update_user_model.dart';
-import 'package:jatya_patient_mobile/utils/constants/api_konstants.dart';
+import 'package:doc_connect/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
+import 'package:doc_connect/modules/Profile/models/update_patient_model/update_pati_prof.dart';
+import 'package:doc_connect/modules/Profile/models/update_user_model.dart';
+import 'package:doc_connect/utils/constants/api_konstants.dart';
 import '../models/get_speci_by_uid/get_spe_pat_uid_Data.dart';
 
 class PatientRepository {

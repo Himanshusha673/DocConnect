@@ -1,5 +1,5 @@
-import 'package:jatya_patient_mobile/common_components/services/api_requests.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/login/login_response_model.dart';
+import 'package:doc_connect/common_components/services/api_requests.dart';
+import 'package:doc_connect/modules/Auth/model/login/login_response_model.dart';
 
 import '../../../../common_components/services/form_submission_status.dart';
 
@@ -13,7 +13,10 @@ class LoginPhoneState {
     this.formStatus = const InitialFormStatus(),
   });
 
-  LoginPhoneState copyWith({String? phoneNumber, String? countryCode, FormSubmissionStatus? formStatus}) {
+  LoginPhoneState copyWith(
+      {String? phoneNumber,
+      String? countryCode,
+      FormSubmissionStatus? formStatus}) {
     return LoginPhoneState(
       countryCode: countryCode ?? this.countryCode,
       phoneNumber: phoneNumber ?? this.phoneNumber,
@@ -40,7 +43,6 @@ class LoginPhoneFailure extends LoginPhoneState {
   final String error;
   LoginPhoneFailure({required this.error});
 }
-
 
 class LoginPhoneOTPFailure extends LoginPhoneState {
   final String error;

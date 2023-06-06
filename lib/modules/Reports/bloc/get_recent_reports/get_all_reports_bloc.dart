@@ -3,9 +3,9 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:jatya_patient_mobile/modules/Reports/models/get_recent_report_response_model.dart';
-import 'package:jatya_patient_mobile/modules/Reports/services/recent_reports_repo.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
+import 'package:doc_connect/modules/Reports/models/get_recent_report_response_model.dart';
+import 'package:doc_connect/modules/Reports/services/recent_reports_repo.dart';
+import 'package:doc_connect/utils/SharePref.dart';
 
 part 'get_all_reports_event.dart';
 part 'get_all_reports_state.dart';

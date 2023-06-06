@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/common_drawer.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/bloc/mediline_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/models/get_appointmens_response.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/screens/search_screen.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/app_bar_dropdown_menu.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/date_picker.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/mediline_tab_view.dart';
-import 'package:jatya_patient_mobile/utils/helper/helper.dart';
+import 'package:doc_connect/common_components/widgets/common_drawer.dart';
+import 'package:doc_connect/modules/Mediline/bloc/mediline_bloc.dart';
+import 'package:doc_connect/modules/Mediline/models/get_appointmens_response.dart';
+import 'package:doc_connect/modules/Mediline/screens/search_screen.dart';
+import 'package:doc_connect/modules/Mediline/widgets/app_bar_dropdown_menu.dart';
+import 'package:doc_connect/modules/Mediline/widgets/date_picker.dart';
+import 'package:doc_connect/modules/Mediline/widgets/mediline_tab_view.dart';
+import 'package:doc_connect/utils/helper/helper.dart';
 
 import '../../../utils/constants/color_konstants.dart';
 
@@ -18,7 +18,8 @@ class MyMedilineScreen extends StatefulWidget {
   State<MyMedilineScreen> createState() => _MyMedilineScreenState();
 }
 
-class _MyMedilineScreenState extends State<MyMedilineScreen> with SingleTickerProviderStateMixin {
+class _MyMedilineScreenState extends State<MyMedilineScreen>
+    with SingleTickerProviderStateMixin {
   DateTime? _selecteDate;
   @override
   void initState() {
@@ -41,11 +42,18 @@ class _MyMedilineScreenState extends State<MyMedilineScreen> with SingleTickerPr
             return const Center(child: CircularProgressIndicator());
           }
           if (_selecteDate != null) {
-            List<AppointmentDetail> appointmentsList =
-                state.appointmentList?.where((element) => element.appointment.appointmentDate.isSameDate(_selecteDate!)).toList() ?? [];
-            return MedilineTabView(appointments: appointmentsList, clinicList: state.clinicList ?? []);
+            List<AppointmentDetail> appointmentsList = state.appointmentList
+                    ?.where((element) => element.appointment.appointmentDate
+                        .isSameDate(_selecteDate!))
+                    .toList() ??
+                [];
+            return MedilineTabView(
+                appointments: appointmentsList,
+                clinicList: state.clinicList ?? []);
           }
-          return MedilineTabView(appointments: state.appointmentList ?? [], clinicList: state.clinicList ?? []);
+          return MedilineTabView(
+              appointments: state.appointmentList ?? [],
+              clinicList: state.clinicList ?? []);
         },
       ),
       bottomNavigationBar: SizedBox(
@@ -129,8 +137,10 @@ class _MyMedilineScreenState extends State<MyMedilineScreen> with SingleTickerPr
         style: OutlinedButton.styleFrom(
             minimumSize: Size.zero,
             padding: const EdgeInsets.all(16),
-            side: BorderSide(width: 0.5, color: ColorKonstants.primarySwatch.shade100),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))),
+            side: BorderSide(
+                width: 0.5, color: ColorKonstants.primarySwatch.shade100),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))),
         onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

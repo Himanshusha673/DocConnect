@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/link_text.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/dropdown.dart';
+import 'package:doc_connect/common_components/widgets/link_text.dart';
+import 'package:doc_connect/common_components/widgets/dropdown.dart';
 
 class DiscountPopup extends StatefulWidget {
   const DiscountPopup({super.key});
@@ -33,7 +33,7 @@ class _DiscountPopupState extends State<DiscountPopup> {
                   decoration: InputDecoration(
                       prefixIcon: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const[
+                    children: const [
                       Text(
                         "₹",
                         style: TextStyle(fontSize: 24, color: Colors.yellow),
@@ -43,7 +43,10 @@ class _DiscountPopupState extends State<DiscountPopup> {
                 ),
               ),
               DropDownWidget(
-                  title: "SELECT REASON", selectedItem: const DropDownItem(name: "Others"), options:const [DropDownItem(name: "Others")], onChanged: (value) {}),
+                  title: "SELECT REASON",
+                  selectedItem: const DropDownItem(name: "Others"),
+                  options: const [DropDownItem(name: "Others")],
+                  onChanged: (value) {}),
               field(
                   title: "ENTER REASON",
                   textField: const TextField(

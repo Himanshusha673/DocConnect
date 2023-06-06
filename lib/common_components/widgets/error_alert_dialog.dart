@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/app_alert_dialog.dart';
+import 'package:doc_connect/common_components/widgets/app_alert_dialog.dart';
 
 class ErrorAlertDialog extends StatelessWidget {
   final String error;
   final Function()? onPressed;
   final double? height;
-  const ErrorAlertDialog({super.key, this.height, required this.error, this.onPressed});
+  const ErrorAlertDialog(
+      {super.key, this.height, required this.error, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,8 @@ class ErrorAlertDialog extends StatelessWidget {
           SizedBox(
             width: MediaQuery.of(context).size.width * 0.6,
             child: OutlinedButton(
-              style: OutlinedButton.styleFrom(side: const BorderSide(width: 1, color: Colors.red)),
+              style: OutlinedButton.styleFrom(
+                  side: const BorderSide(width: 1, color: Colors.red)),
               onPressed: () {
                 onPressed == null ? Navigator.pop(context) : onPressed!();
               },

@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/widgets/appointment_card.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/modules/NewAppointment/widgets/appointment_card.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
 import '../../../utils/constants/color_konstants.dart';
 import '../bloc/appointment_bloc.dart';
@@ -27,7 +27,9 @@ class _CheckAvailabilityState extends State<CheckAvailability> {
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    context.read<AppointmentBloc>().add(GetDoctorSlots(doctor: widget.availableDoctor.doctor));
+    context
+        .read<AppointmentBloc>()
+        .add(GetDoctorSlots(doctor: widget.availableDoctor.doctor));
     super.initState();
   }
 
@@ -54,7 +56,8 @@ class _CheckAvailabilityState extends State<CheckAvailability> {
             children: [
               Text(
                 "You are trying to book an appointment",
-                style: TextStyle(fontWeight: FontWeight.w700, color: Colors.grey.shade700),
+                style: TextStyle(
+                    fontWeight: FontWeight.w700, color: Colors.grey.shade700),
               ),
               TextButton(
                 onPressed: () {
@@ -80,7 +83,8 @@ class _CheckAvailabilityState extends State<CheckAvailability> {
                 decoration: BoxDecoration(
                   color: Theme.of(context).primaryColor.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(100),
-                  image: const DecorationImage(image: AssetImage(ImagesConstants.doctor)),
+                  image: const DecorationImage(
+                      image: AssetImage(ImagesConstants.doctor)),
                 ),
               ),
               const SizedBox(width: 8),
@@ -103,7 +107,8 @@ class _CheckAvailabilityState extends State<CheckAvailability> {
                     ),
                     Text(
                       widget.availableDoctor.doctor.qualification,
-                      style: TextStyle(fontSize: 12, color: Colors.grey.shade700),
+                      style:
+                          TextStyle(fontSize: 12, color: Colors.grey.shade700),
                     ),
                     starsWidget(value: 5), //TODO: docto rating,
                   ],
@@ -200,7 +205,8 @@ Widget verifiedTag(BuildContext context) {
       decoration: BoxDecoration(
         color: ColorKonstants.primarySwatch.shade100,
         borderRadius: BorderRadius.circular(2),
-        border: Border.all(width: 0.5, color: ColorKonstants.verifiedBorder.withOpacity(0.7)),
+        border: Border.all(
+            width: 0.5, color: ColorKonstants.verifiedBorder.withOpacity(0.7)),
       ),
       child: Row(
         children: [
@@ -212,7 +218,10 @@ Widget verifiedTag(BuildContext context) {
           const SizedBox(width: 4),
           Text(
             'VERIFIED',
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).primaryColor),
           ),
           const SizedBox(width: 4),
         ],

@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/model/appointment/create_appointment.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/model/appointment/create_appointment_response.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/model/doctors_via_location_response.dart';
+import 'package:doc_connect/modules/NewAppointment/model/appointment/create_appointment.dart';
+import 'package:doc_connect/modules/NewAppointment/model/appointment/create_appointment_response.dart';
+import 'package:doc_connect/modules/NewAppointment/model/doctors_via_location_response.dart';
 
 import '../../../common_components/services/api_requests.dart';
 import '../../../utils/constants/api_konstants.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/modules/Notifications/widgets/custompopup.dart';
-
+import 'package:doc_connect/modules/Notifications/widgets/custompopup.dart';
 
 import '../../../utils/constants/color_konstants.dart';
 

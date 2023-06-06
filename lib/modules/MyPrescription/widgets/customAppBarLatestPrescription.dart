@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});

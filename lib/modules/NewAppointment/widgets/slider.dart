@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class AppSlider extends StatefulWidget {
   final int startValue;
@@ -80,7 +80,10 @@ class _AppSliderState extends State<AppSlider> {
               child: GestureDetector(
                 onHorizontalDragUpdate: (details) {
                   setState(() {
-                    percentage = ((details.globalPosition.dx / (MediaQuery.of(context).size.width * 0.9)) * 100).ceil();
+                    percentage = ((details.globalPosition.dx /
+                                (MediaQuery.of(context).size.width * 0.9)) *
+                            100)
+                        .ceil();
                     if (percentage > 95) {
                       initial = initial;
                       // percentage = 90;
@@ -155,8 +158,10 @@ class DropletClipper extends CustomClipper<Path> {
       ..lineTo(0, size.height)
       ..lineTo(size.width, size.height)
       ..lineTo(size.width, size.height / 1.5)
-      ..arcToPoint(Offset(size.width / 2, 0), radius: const Radius.circular(40), clockwise: false)
-      ..arcToPoint(Offset(0, size.height / 1.5), radius: const Radius.circular(40), clockwise: false)
+      ..arcToPoint(Offset(size.width / 2, 0),
+          radius: const Radius.circular(40), clockwise: false)
+      ..arcToPoint(Offset(0, size.height / 1.5),
+          radius: const Radius.circular(40), clockwise: false)
       ..close();
 
     return path;

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/app_alert_dialog.dart';
+import 'package:doc_connect/common_components/widgets/app_alert_dialog.dart';
 
 class StartConsulationAlertDialog extends StatelessWidget {
   const StartConsulationAlertDialog({super.key});
@@ -59,7 +59,8 @@ showPopup({required BuildContext context, required Widget child}) {
           child: Container(
             width: 200.0,
             height: 200.0,
-            decoration: BoxDecoration(color: Colors.grey.shade100.withOpacity(0.1)),
+            decoration:
+                BoxDecoration(color: Colors.grey.shade100.withOpacity(0.1)),
             child: Stack(
               children: [
                 Center(child: child),

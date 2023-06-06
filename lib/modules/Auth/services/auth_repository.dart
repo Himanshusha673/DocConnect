@@ -1,15 +1,15 @@
 import 'dart:developer';
 
-import 'package:jatya_patient_mobile/modules/Auth/model/forgot_password/forgot_password_request_model.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/forgot_password/forgot_password_response.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/forgot_password/verify_forgot_password_request.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/forgot_password/verify_forgot_password_response.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/login/login_phone_request_model.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/login/login_request_model.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/login/login_response_model.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/register/register_response_model.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
-import 'package:jatya_patient_mobile/utils/constants/api_konstants.dart';
+import 'package:doc_connect/modules/Auth/model/forgot_password/forgot_password_request_model.dart';
+import 'package:doc_connect/modules/Auth/model/forgot_password/forgot_password_response.dart';
+import 'package:doc_connect/modules/Auth/model/forgot_password/verify_forgot_password_request.dart';
+import 'package:doc_connect/modules/Auth/model/forgot_password/verify_forgot_password_response.dart';
+import 'package:doc_connect/modules/Auth/model/login/login_phone_request_model.dart';
+import 'package:doc_connect/modules/Auth/model/login/login_request_model.dart';
+import 'package:doc_connect/modules/Auth/model/login/login_response_model.dart';
+import 'package:doc_connect/modules/Auth/model/register/register_response_model.dart';
+import 'package:doc_connect/utils/SharePref.dart';
+import 'package:doc_connect/utils/constants/api_konstants.dart';
 
 import '../../../common_components/services/api_requests.dart';
 import '../model/login/login_phone_response_model.dart';

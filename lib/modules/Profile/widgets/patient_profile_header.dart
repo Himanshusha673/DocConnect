@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/modules/Profile/widgets/patient_circular_profile_pic.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
+import 'package:doc_connect/modules/Profile/widgets/patient_circular_profile_pic.dart';
+import 'package:doc_connect/utils/SharePref.dart';
 
 class PatientProfileHeader extends StatelessWidget {
   const PatientProfileHeader({Key? key}) : super(key: key);

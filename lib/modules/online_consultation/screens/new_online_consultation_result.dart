@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class NewOnlineConsultationResult extends StatefulWidget {
   const NewOnlineConsultationResult({super.key});
 
   @override
-  State<NewOnlineConsultationResult> createState() => NewOnlineConsultationReStaResultScreen();
+  State<NewOnlineConsultationResult> createState() =>
+      NewOnlineConsultationReStaResultScreen();
 }
 
-class NewOnlineConsultationReStaResultScreen extends State<NewOnlineConsultationResult> {
+class NewOnlineConsultationReStaResultScreen
+    extends State<NewOnlineConsultationResult> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

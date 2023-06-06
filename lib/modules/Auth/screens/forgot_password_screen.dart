@@ -2,15 +2,15 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/services/form_submission_status.dart';
-import 'package:jatya_patient_mobile/modules/Auth/screens/create_new_password_screen.dart';
-import 'package:jatya_patient_mobile/modules/Auth/screens/enter_otp_screen.dart';
-import 'package:jatya_patient_mobile/modules/Auth/screens/login_screen.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/custom_elevated_button.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/custom_text_button.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/icon_title_widget.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/input_text_field.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/phone_number_textfield.dart';
+import 'package:doc_connect/common_components/services/form_submission_status.dart';
+import 'package:doc_connect/modules/Auth/screens/create_new_password_screen.dart';
+import 'package:doc_connect/modules/Auth/screens/enter_otp_screen.dart';
+import 'package:doc_connect/modules/Auth/screens/login_screen.dart';
+import 'package:doc_connect/modules/Auth/widgets/custom_elevated_button.dart';
+import 'package:doc_connect/modules/Auth/widgets/custom_text_button.dart';
+import 'package:doc_connect/modules/Auth/widgets/icon_title_widget.dart';
+import 'package:doc_connect/modules/Auth/widgets/input_text_field.dart';
+import 'package:doc_connect/modules/Auth/widgets/phone_number_textfield.dart';
 
 import '../../../common_components/widgets/popup_widget.dart';
 import '../bloc/forgot_password_bloc/forgot_password_bloc.dart';
@@ -28,7 +28,8 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final TextEditingController _emailTextController = TextEditingController();
-  final TextEditingController _phoneNumberTextController = TextEditingController(text: '');
+  final TextEditingController _phoneNumberTextController =
+      TextEditingController(text: '');
   final formGlobalKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -38,18 +39,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return RepositoryProvider(
       create: (context) => AuthRepository(),
       child: BlocProvider(
-        create: (context) => ForgotPasswordBloc(authRepository: context.read<AuthRepository>()),
+        create: (context) =>
+            ForgotPasswordBloc(authRepository: context.read<AuthRepository>()),
         child: BlocListener<ForgotPasswordBloc, ForgotPasswordState>(
           listener: (context, state) {
             log(state.toString());
             if (state.formStatus is FormSubmissionFailed) {
-              final FormSubmissionFailed formStatus = state.formStatus as FormSubmissionFailed;
+              final FormSubmissionFailed formStatus =
+                  state.formStatus as FormSubmissionFailed;
               showPopup(
                   context: context,
                   child: ErrorAlertDialog(
                     error: formStatus.exception.toString(),
                   ));
-              context.read<ForgotPasswordBloc>().add(const ForgotPasswordReinital());
+              context
+                  .read<ForgotPasswordBloc>()
+                  .add(const ForgotPasswordReinital());
               return;
             }
             if (state is ForgotPasswordSuccess) {
@@ -58,7 +63,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => EnterOTPScreen(
-                    otpSentAddress: _phoneNumberTextController.text.isEmpty ? _emailTextController.text : _phoneNumberTextController.text,
+                    otpSentAddress: _phoneNumberTextController.text.isEmpty
+                        ? _emailTextController.text
+                        : _phoneNumberTextController.text,
                     promptTitle: 'Verification code sent to',
                     screenTitle: 'Reset your password',
                     buttonText: 'Verify',
@@ -113,8 +120,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             labelText: 'EMAIL ID',
                             textEditingController: _emailTextController,
                             hintText: 'Email ID',
-                            validator: (email) => Validators.forgotPasswordEmailValidator(email, _phoneNumberTextController.text),
-                            onChanged: (value) => context.read<ForgotPasswordBloc>().add(EmailChanged(email: value)),
+                            validator: (email) =>
+                                Validators.forgotPasswordEmailValidator(
+                                    email, _phoneNumberTextController.text),
+                            onChanged: (value) => context
+                                .read<ForgotPasswordBloc>()
+                                .add(EmailChanged(email: value)),
                           );
                         },
                       ),
@@ -138,7 +149,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                     hintText: 'Phone Number',
                                   ),
                                   keyboardType: TextInputType.number,
-                                  validator: (phone) => Validators.forgotPasswordPhoneValidator(phone, _emailTextController.text)
+                                  validator: (phone) =>
+                                      Validators.forgotPasswordPhoneValidator(
+                                          phone, _emailTextController.text)
                                   // inputFormatters: <TextInputFormatter>[
                                   //   FilteringTextInputFormatter.digitsOnly
                                   // ], // Only numbers can be entered
@@ -156,11 +169,19 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                               ? const CircularProgressIndicator()
                               : CustomElevatedButton(
                                   onPressed: () {
-                                    if (_phoneNumberTextController.text.length == 10 && _emailTextController.text == "") {
-                                      context.read<ForgotPasswordBloc>().add(const ForgotPasswordSubmitted());
+                                    if (_phoneNumberTextController
+                                                .text.length ==
+                                            10 &&
+                                        _emailTextController.text == "") {
+                                      context
+                                          .read<ForgotPasswordBloc>()
+                                          .add(const ForgotPasswordSubmitted());
                                     }
-                                    if (formGlobalKey.currentState!.validate()) {
-                                      context.read<ForgotPasswordBloc>().add(const ForgotPasswordSubmitted());
+                                    if (formGlobalKey.currentState!
+                                        .validate()) {
+                                      context
+                                          .read<ForgotPasswordBloc>()
+                                          .add(const ForgotPasswordSubmitted());
                                     }
                                   },
                                   horizontalWidth: width * 0.25,

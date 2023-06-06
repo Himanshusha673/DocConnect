@@ -1,8 +1,8 @@
-import 'package:jatya_patient_mobile/modules/Profile/models/get_all_prev_reports/get_all_prev_repo.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/get_all_vaccination/get_all_vacc_spec_pat.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/allergies/get_allergies_model.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/get_speci_by_uid/get_spe_pat_uid_Data.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
+import 'package:doc_connect/modules/Profile/models/get_all_prev_reports/get_all_prev_repo.dart';
+import 'package:doc_connect/modules/Profile/models/get_all_vaccination/get_all_vacc_spec_pat.dart';
+import 'package:doc_connect/modules/Profile/models/allergies/get_allergies_model.dart';
+import 'package:doc_connect/modules/Profile/models/get_speci_by_uid/get_spe_pat_uid_Data.dart';
+import 'package:doc_connect/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
 
 abstract class PatientState {}
 

@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/update_patient_prof_bloc/upadte_pat_state.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/update_patient_prof_bloc/update_pat_event.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/update_patient_model/update_pati_prof.dart';
-import 'package:jatya_patient_mobile/modules/Profile/services/patient_services.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
+import 'package:doc_connect/modules/Profile/bloc/update_patient_prof_bloc/upadte_pat_state.dart';
+import 'package:doc_connect/modules/Profile/bloc/update_patient_prof_bloc/update_pat_event.dart';
+import 'package:doc_connect/modules/Profile/models/update_patient_model/update_pati_prof.dart';
+import 'package:doc_connect/modules/Profile/services/patient_services.dart';
+import 'package:doc_connect/utils/SharePref.dart';
 
 class UpdatePatientProfileBloc
     extends Bloc<PatientUpdateEvent, UpdatePatientState> {

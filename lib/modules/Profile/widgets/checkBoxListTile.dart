@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class MyCheckboxListTile extends StatefulWidget {
   final String title;

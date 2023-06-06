@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/single_mediline_card.dart';
+import 'package:doc_connect/modules/Mediline/widgets/single_mediline_card.dart';
 
 import '../bloc/search_bloc/mediline_search_bloc.dart';
 
@@ -51,7 +51,9 @@ class _MedilineSearchScreenState extends State<MedilineSearchScreen> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.75,
                   child: TextField(
-                    onChanged: (value) => context.read<MedilineSearchBloc>().add(MedilineGetSearchEvent(searchQuery: value)),
+                    onChanged: (value) => context
+                        .read<MedilineSearchBloc>()
+                        .add(MedilineGetSearchEvent(searchQuery: value)),
                     controller: searchController,
                     decoration: const InputDecoration(
                       border: InputBorder.none,
@@ -63,9 +65,9 @@ class _MedilineSearchScreenState extends State<MedilineSearchScreen> {
                 ),
                 IconButton(
                     onPressed: () {
-                    searchController.clear();
-                   },
-                  icon: const Icon(Icons.cancel))
+                      searchController.clear();
+                    },
+                    icon: const Icon(Icons.cancel))
               ],
             ),
           )

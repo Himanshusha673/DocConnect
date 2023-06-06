@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/modules/Auth/services/social_signin_repository.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/social_media_login_button.dart';
+import 'package:doc_connect/modules/Auth/services/social_signin_repository.dart';
+import 'package:doc_connect/modules/Auth/widgets/social_media_login_button.dart';
 
 import '../../../common_components/widgets/error_alert_dialog.dart';
 import '../../../utils/constants/image_konstants.dart';

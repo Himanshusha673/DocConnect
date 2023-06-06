@@ -1,4 +1,4 @@
-import 'package:jatya_patient_mobile/modules/Profile/models/update_patient_model/update_pati_prof.dart';
+import 'package:doc_connect/modules/Profile/models/update_patient_model/update_pati_prof.dart';
 
 abstract class UpdatePatientState {}
 

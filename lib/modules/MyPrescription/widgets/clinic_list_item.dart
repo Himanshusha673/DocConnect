@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/latest_prescription.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/modules/MyPrescription/models/latest_prescription.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
 class ClinicListItem extends StatelessWidget {
   final GetAllPrescriptionData clinicModel;

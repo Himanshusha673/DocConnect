@@ -3,16 +3,16 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/drop_down_field.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/patientBloc/patient_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/patientBloc/patient_event.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/patientBloc/patient_state.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/update_user_model.dart';
-import 'package:jatya_patient_mobile/modules/Profile/widgets/validations.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
-import 'package:jatya_patient_mobile/utils/constants/items_konstants.dart';
+import 'package:doc_connect/common_components/widgets/drop_down_field.dart';
+import 'package:doc_connect/modules/Profile/bloc/patientBloc/patient_bloc.dart';
+import 'package:doc_connect/modules/Profile/bloc/patientBloc/patient_event.dart';
+import 'package:doc_connect/modules/Profile/bloc/patientBloc/patient_state.dart';
+import 'package:doc_connect/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
+import 'package:doc_connect/modules/Profile/models/update_user_model.dart';
+import 'package:doc_connect/modules/Profile/widgets/validations.dart';
+import 'package:doc_connect/utils/SharePref.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/items_konstants.dart';
 
 import '../../../../common_components/widgets/text_form_field.dart';
 import '../../models/get_all_prev_reports/get_all_prev_repo.dart';
@@ -128,7 +128,9 @@ class _DemographicTabState extends State<DemographicTab> {
           }
 
           getAllPrevReportsForSpecificPatient = state.prevReports;
-          allergyId = _patientData.allergies.isEmpty?"":_patientData.allergies[0].id.toString();
+          allergyId = _patientData.allergies.isEmpty
+              ? ""
+              : _patientData.allergies[0].id.toString();
 
           updatedUserDetails = UpdateUserModel(
             name: _nameCntroller.text,

@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:http/http.dart' as http;
-import 'package:jatya_patient_mobile/common_components/model/errors/error_response.dart';
+import 'package:doc_connect/common_components/model/errors/error_response.dart';
 
 import '../../utils/SharePref.dart';
 

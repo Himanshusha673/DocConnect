@@ -2,10 +2,10 @@ import 'dart:developer';
 import 'dart:io';
 import 'dart:convert';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/vaccination/get_vaccine_response.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/vaccination/post_vaccine_request.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/vaccination/post_vaccine_response.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
+import 'package:doc_connect/modules/Profile/models/vaccination/get_vaccine_response.dart';
+import 'package:doc_connect/modules/Profile/models/vaccination/post_vaccine_request.dart';
+import 'package:doc_connect/modules/Profile/models/vaccination/post_vaccine_response.dart';
+import 'package:doc_connect/utils/SharePref.dart';
 
 import '../../../common_components/services/api_requests.dart';
 import '../../../utils/constants/api_konstants.dart';

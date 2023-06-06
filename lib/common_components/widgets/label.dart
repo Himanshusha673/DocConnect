@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class Label extends StatelessWidget {
   final Widget label;
   final BuildContext context;
   final Color? color;
-  const Label({super.key, this.color, required this.context, required this.label});
+  const Label(
+      {super.key, this.color, required this.context, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,9 @@ class Label extends StatelessWidget {
           decoration: BoxDecoration(
             color: color ?? ColorKonstants.verifiedBG,
             borderRadius: BorderRadius.circular(4),
-            border: Border.all(width: 0.5, color: ColorKonstants.verifiedBorder.withOpacity(0.7)),
+            border: Border.all(
+                width: 0.5,
+                color: ColorKonstants.verifiedBorder.withOpacity(0.7)),
           ),
           child: label),
     );

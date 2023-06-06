@@ -3,10 +3,10 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:jatya_patient_mobile/modules/MyJatya/models/cancel_appointment_model.dart';
-import 'package:jatya_patient_mobile/modules/MyJatya/models/upcoming_appointment_model.dart';
-import 'package:jatya_patient_mobile/modules/MyJatya/services/appoitment_services.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
+import 'package:doc_connect/modules/MyJatya/models/cancel_appointment_model.dart';
+import 'package:doc_connect/modules/MyJatya/models/upcoming_appointment_model.dart';
+import 'package:doc_connect/modules/MyJatya/services/appoitment_services.dart';
+import 'package:doc_connect/utils/SharePref.dart';
 
 part 'upcoming_appointmen_event.dart';
 part 'upcoming_appointmen_state.dart';
@@ -34,7 +34,7 @@ class UpcomingAppointmenBloc
         log("setting appointId${getAllAppointments.data![0].appointment!.id!}");
         sharedPrefs
             .setAppointmentId(getAllAppointments.data![0].appointment!.id!);
-            
+
         emit(UpcomingAppointmenSuccess(getAllAppointments: getAllAppointments));
       } else {
         emit(const UpcomingAppointmeFailure(

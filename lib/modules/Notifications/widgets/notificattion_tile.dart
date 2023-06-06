@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class NotificationTile extends StatefulWidget {
   final String title;
@@ -22,7 +22,6 @@ class _NotificationTileState extends State<NotificationTile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      
       title: Text(
         widget.title,
         style: TextStyle(
@@ -38,7 +37,6 @@ class _NotificationTileState extends State<NotificationTile> {
         // "4 days to go"
       ),
       leading: Container(
-        
         width: 42,
         height: 42,
         decoration: BoxDecoration(
@@ -51,9 +49,7 @@ class _NotificationTileState extends State<NotificationTile> {
             size: 20,
           ),
         ),
-        
       ),
-      
     );
   }
 }

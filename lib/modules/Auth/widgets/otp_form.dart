@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class OTPForm extends StatefulWidget {
   double width;
@@ -78,7 +78,12 @@ class _OTPFormState extends State<OTPForm> {
             width: widget.width,
             height: widget.height,
             newValue: (val) {
-              widget.onChanged(otp1.text + otp2.text + otp3.text + otp4.text + otp5.text + otp6.text);
+              widget.onChanged(otp1.text +
+                  otp2.text +
+                  otp3.text +
+                  otp4.text +
+                  otp5.text +
+                  otp6.text);
             },
             controller: otp6,
           ),
@@ -111,7 +116,9 @@ class _OTPFormState extends State<OTPForm> {
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: controller.text.isNotEmpty ? ColorKonstants.primarySwatch.shade400 : Colors.grey,
+              color: controller.text.isNotEmpty
+                  ? ColorKonstants.primarySwatch.shade400
+                  : Colors.grey,
               width: 1.0,
             ),
           ),

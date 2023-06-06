@@ -2,15 +2,15 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/services/form_submission_status.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/password_textfield.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/success_alert_dialog.dart';
-import 'package:jatya_patient_mobile/modules/Auth/screens/login_screen.dart';
-import 'package:jatya_patient_mobile/modules/Auth/services/auth_repository.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/custom_elevated_button.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/custom_text_button.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/input_text_field.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/terms_and_copyright_widget.dart';
+import 'package:doc_connect/common_components/services/form_submission_status.dart';
+import 'package:doc_connect/common_components/widgets/password_textfield.dart';
+import 'package:doc_connect/common_components/widgets/success_alert_dialog.dart';
+import 'package:doc_connect/modules/Auth/screens/login_screen.dart';
+import 'package:doc_connect/modules/Auth/services/auth_repository.dart';
+import 'package:doc_connect/modules/Auth/widgets/custom_elevated_button.dart';
+import 'package:doc_connect/modules/Auth/widgets/custom_text_button.dart';
+import 'package:doc_connect/modules/Auth/widgets/input_text_field.dart';
+import 'package:doc_connect/modules/Auth/widgets/terms_and_copyright_widget.dart';
 
 import '../../../common_components/services/api_requests.dart';
 import '../../../common_components/widgets/error_alert_dialog.dart';

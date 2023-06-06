@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/common_drawer.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/screens/new_online_consultation_result.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/date_picker.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/dropdown.dart';
+import 'package:doc_connect/common_components/widgets/common_drawer.dart';
+import 'package:doc_connect/modules/online_consultation/screens/new_online_consultation_result.dart';
+import 'package:doc_connect/common_components/widgets/date_picker.dart';
+import 'package:doc_connect/common_components/widgets/dropdown.dart';
 
 class NewOnlineConsultationScreen extends StatefulWidget {
   const NewOnlineConsultationScreen({super.key});
@@ -94,10 +94,9 @@ class _NewOnlineConsultationScreenState
                     appointmentDate = value;
                   },
                 ),
-
                 Container(
                   margin: const EdgeInsets.only(top: 20),
-                  width: MediaQuery.of(context).size.width*0.38,
+                  width: MediaQuery.of(context).size.width * 0.38,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -127,7 +126,7 @@ class _NewOnlineConsultationScreenState
             const SizedBox(height: 16),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height*0.06,
+              height: MediaQuery.of(context).size.height * 0.06,
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {

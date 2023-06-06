@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/latest_prescription.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/services/prescription_services.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
+import 'package:doc_connect/modules/MyPrescription/models/latest_prescription.dart';
+import 'package:doc_connect/modules/MyPrescription/services/prescription_services.dart';
+import 'package:doc_connect/utils/SharePref.dart';
 
 part 'my_prescription_event.dart';
 part 'my_prescription_state.dart';

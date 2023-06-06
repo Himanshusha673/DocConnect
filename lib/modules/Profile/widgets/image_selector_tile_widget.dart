@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/upload_profile_pic_bloc/upload_profile_pic_bloc.dart';
+import 'package:doc_connect/modules/Profile/bloc/upload_profile_pic_bloc/upload_profile_pic_bloc.dart';
 
 import '../../../utils/constants/color_konstants.dart';
 import '../../../utils/enums.dart';

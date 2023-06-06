@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/link_text.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/share_with_clinic_card.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/single_mediline_card.dart';
+import 'package:doc_connect/common_components/widgets/link_text.dart';
+import 'package:doc_connect/modules/Mediline/widgets/share_with_clinic_card.dart';
+import 'package:doc_connect/modules/Mediline/widgets/single_mediline_card.dart';
 
 import '../bloc/mediline_bloc.dart';
 import '../models/get_appointmens_response.dart';

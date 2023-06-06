@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/screens/doctors_profile.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
+import 'package:doc_connect/modules/MyPrescription/screens/doctors_profile.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 import '../../../common_components/widgets/common_drawer.dart';
 
 class AbouttheClinicScreen extends StatelessWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/models/share_appointment_request.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/services/mediline_repository.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/model/get_clinic_detail_response.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/screens/payment_screen.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/modules/Mediline/models/share_appointment_request.dart';
+import 'package:doc_connect/modules/Mediline/services/mediline_repository.dart';
+import 'package:doc_connect/modules/NewAppointment/model/get_clinic_detail_response.dart';
+import 'package:doc_connect/modules/NewAppointment/screens/payment_screen.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
 import '../models/get_appointmens_response.dart';
 
@@ -45,7 +45,9 @@ class _ShareWithClinicCardState extends State<ShareWithClinicCard> {
             children: [
               Stack(
                 children: [
-                  Container(padding: const EdgeInsets.only(top: 12), child: appointmentDetail()),
+                  Container(
+                      padding: const EdgeInsets.only(top: 12),
+                      child: appointmentDetail()),
                 ],
               ),
               shareButton(),
@@ -82,7 +84,9 @@ class _ShareWithClinicCardState extends State<ShareWithClinicCard> {
       clipper: MyCustomClipperBottom(radius: 8),
       child: Container(
         padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(color: Colors.grey.shade200, borderRadius: BorderRadius.circular(8)),
+        decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
             Row(
@@ -102,7 +106,8 @@ class _ShareWithClinicCardState extends State<ShareWithClinicCard> {
                     children: [
                       Text(
                         widget.clinic.name,
-                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                       const SizedBox(
                         height: 8,
@@ -141,7 +146,8 @@ class _ShareWithClinicCardState extends State<ShareWithClinicCard> {
       clipper: MyCustomClipperTop(radius: 8),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
             // const SizedBox(
@@ -154,7 +160,9 @@ class _ShareWithClinicCardState extends State<ShareWithClinicCard> {
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: isShared ? Colors.red : ColorKonstants.primaryColor,
+                          backgroundColor: isShared
+                              ? Colors.red
+                              : ColorKonstants.primaryColor,
                         ),
                         onPressed: () {
                           setState(() {
@@ -162,10 +170,13 @@ class _ShareWithClinicCardState extends State<ShareWithClinicCard> {
                           });
                           MedilineRepository()
                               .shareAppointment(
-                                  shareAppointmentRequest: ShareAppointmentRequest(
-                            appointmentId: widget.appointmentDetail.appointment.id,
+                                  shareAppointmentRequest:
+                                      ShareAppointmentRequest(
+                            appointmentId:
+                                widget.appointmentDetail.appointment.id,
                             clinicId: widget.clinic.id,
-                            patientId: widget.appointmentDetail.appointment.patientId,
+                            patientId:
+                                widget.appointmentDetail.appointment.patientId,
                           ))
                               .then((value) {
                             setState(() {
@@ -206,7 +217,8 @@ class MyCustomClipperBottom extends CustomClipper<Path> {
         radius: Radius.circular(radius.toDouble()),
       ) // Add line p1p2
       ..lineTo(size.width - radius, size.height)
-      ..arcToPoint(Offset(size.width, size.height - radius), radius: Radius.circular(radius))
+      ..arcToPoint(Offset(size.width, size.height - radius),
+          radius: Radius.circular(radius))
       ..lineTo(size.width, 0) // Add line p2p3
       ..close();
     return path;
@@ -226,7 +238,8 @@ class MyCustomClipperTop extends CustomClipper<Path> {
       ..lineTo(0, size.height)
       ..lineTo(size.width, size.height)
       ..lineTo(size.width, radius)
-      ..arcToPoint(Offset(size.width - radius, 0), radius: Radius.circular(radius))
+      ..arcToPoint(Offset(size.width - radius, 0),
+          radius: Radius.circular(radius))
       ..lineTo(radius, 0)
       ..arcToPoint(Offset(0, radius), radius: Radius.circular(radius))
       ..close();

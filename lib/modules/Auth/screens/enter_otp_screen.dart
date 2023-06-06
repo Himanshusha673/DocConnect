@@ -2,11 +2,11 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/popup_widget.dart';
+import 'package:doc_connect/common_components/widgets/popup_widget.dart';
 
-import 'package:jatya_patient_mobile/modules/Auth/screens/login_screen.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/custom_text_button.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/otp_form.dart';
+import 'package:doc_connect/modules/Auth/screens/login_screen.dart';
+import 'package:doc_connect/modules/Auth/widgets/custom_text_button.dart';
+import 'package:doc_connect/modules/Auth/widgets/otp_form.dart';
 
 import '../../../common_components/widgets/error_alert_dialog.dart';
 import '../../../utils/constants/image_konstants.dart';
@@ -117,13 +117,18 @@ class _EnterOTPScreenState extends State<EnterOTPScreen> {
                 CustomElevatedButton(
                   onPressed: () async {
                     if (otp.length < 6) {
-                      showPopup(context: context, child: const ErrorAlertDialog(error: "Enter a valid otp"));
+                      showPopup(
+                          context: context,
+                          child: const ErrorAlertDialog(
+                              error: "Enter a valid otp"));
                     } else {
                       String error = await widget.onButtonPressed(context, otp);
                       log("message$error");
 
                       if (error != "") {
-                        showPopup(context: context, child: ErrorAlertDialog(error: error));
+                        showPopup(
+                            context: context,
+                            child: ErrorAlertDialog(error: error));
                       }
                     }
                   },

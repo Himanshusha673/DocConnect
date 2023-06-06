@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/services/form_submission_status.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/login/login_response_model.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/login/patient_fromuid_response.dart';
+import 'package:doc_connect/common_components/services/form_submission_status.dart';
+import 'package:doc_connect/modules/Auth/model/login/login_response_model.dart';
+import 'package:doc_connect/modules/Auth/model/login/patient_fromuid_response.dart';
 import '../../../../common_components/services/api_requests.dart';
 import '../../model/login/login_request_model.dart';
 import '../../services/auth_repository.dart';

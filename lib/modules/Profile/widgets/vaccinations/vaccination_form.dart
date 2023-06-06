@@ -4,11 +4,11 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/date_picker.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/error_alert_dialog.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/vaccination/vaccine.dart';
-import 'package:jatya_patient_mobile/modules/Profile/widgets/vaccinations/certificate_image.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/start_consultation_alert.dart';
+import 'package:doc_connect/common_components/widgets/date_picker.dart';
+import 'package:doc_connect/common_components/widgets/error_alert_dialog.dart';
+import 'package:doc_connect/modules/Profile/models/vaccination/vaccine.dart';
+import 'package:doc_connect/modules/Profile/widgets/vaccinations/certificate_image.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/start_consultation_alert.dart';
 
 import '../../../../common_components/widgets/common_upload_box.dart';
 import '../../../../common_components/widgets/dropdown.dart';

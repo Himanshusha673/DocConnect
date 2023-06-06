@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
-List<Widget> buildIconAndTitle({required String titleText, required double height}) {
+List<Widget> buildIconAndTitle(
+    {required String titleText, required double height}) {
   return [
     Padding(
       padding: const EdgeInsets.only(top: 10),

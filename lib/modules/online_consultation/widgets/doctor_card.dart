@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/bloc/appointment_bloc.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/widgets/check_availability_widget.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/start_consultation_alert.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/modules/NewAppointment/bloc/appointment_bloc.dart';
+import 'package:doc_connect/modules/NewAppointment/widgets/check_availability_widget.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/start_consultation_alert.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
 import '../../NewAppointment/model/doctors_via_location_response.dart';
 import 'doctor_detail_popup.dart';
@@ -39,7 +39,8 @@ class _DoctorDetailCardState extends State<DoctorDetailCard> {
         color: ColorKonstants.cardBackgroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: BorderSide(width: 0.5, color: ColorKonstants.primarySwatch.shade100),
+          side: BorderSide(
+              width: 0.5, color: ColorKonstants.primarySwatch.shade100),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -71,7 +72,8 @@ class _DoctorDetailCardState extends State<DoctorDetailCard> {
                     ? button(
                         text: 'Check Availability',
                         onPressed: () {
-                          context.read<AppointmentBloc>().add(GetDoctorSlots(doctor: widget.availableDoctor.doctor));
+                          context.read<AppointmentBloc>().add(GetDoctorSlots(
+                              doctor: widget.availableDoctor.doctor));
                           showPopup(
                               context: context,
                               child: CheckAvailability(
@@ -82,7 +84,9 @@ class _DoctorDetailCardState extends State<DoctorDetailCard> {
                     : button(
                         text: 'Start Consultation',
                         onPressed: () {
-                          showPopup(context: context, child: const StartConsulationAlertDialog());
+                          showPopup(
+                              context: context,
+                              child: const StartConsulationAlertDialog());
                         }),
               ],
             )
@@ -123,7 +127,9 @@ class _DoctorDetailCardState extends State<DoctorDetailCard> {
               ),
               Text(
                 widget.availableDoctor.doctor.qualification,
-                style: TextStyle(fontSize: 12, color: ColorKonstants.subHeadingTextColor.withOpacity(0.6)),
+                style: TextStyle(
+                    fontSize: 12,
+                    color: ColorKonstants.subHeadingTextColor.withOpacity(0.6)),
               ),
               // starsWidget(value: widget.doctor.stars),//TODO:rating
               starsWidget(value: 5)
@@ -141,7 +147,8 @@ class _DoctorDetailCardState extends State<DoctorDetailCard> {
         widget.availableDoctor.doctor.description,
         overflow: TextOverflow.ellipsis,
         maxLines: 2,
-        style: TextStyle(color: ColorKonstants.subHeadingTextColor.withOpacity(0.6)),
+        style: TextStyle(
+            color: ColorKonstants.subHeadingTextColor.withOpacity(0.6)),
       ),
     );
   }
@@ -155,12 +162,16 @@ class _DoctorDetailCardState extends State<DoctorDetailCard> {
         style: OutlinedButton.styleFrom(
             minimumSize: Size.zero,
             padding: const EdgeInsets.all(16),
-            side: BorderSide(width: 0.5, color: ColorKonstants.primarySwatch.shade100),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))),
+            side: BorderSide(
+                width: 0.5, color: ColorKonstants.primarySwatch.shade100),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(0))),
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(fontWeight: FontWeight.w600, color: Theme.of(context).primaryColor),
+          style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Theme.of(context).primaryColor),
         ),
       ),
     );
@@ -203,7 +214,8 @@ Widget verifiedTag(BuildContext context) {
       decoration: BoxDecoration(
         color: ColorKonstants.verifiedBG,
         borderRadius: BorderRadius.circular(2),
-        border: Border.all(width: 0.5, color: ColorKonstants.verifiedBorder.withOpacity(0.7)),
+        border: Border.all(
+            width: 0.5, color: ColorKonstants.verifiedBorder.withOpacity(0.7)),
       ),
       child: Row(
         children: [
@@ -215,7 +227,10 @@ Widget verifiedTag(BuildContext context) {
           const SizedBox(width: 4),
           Text(
             'VERIFIED',
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).primaryColor),
           ),
           const SizedBox(width: 4),
         ],

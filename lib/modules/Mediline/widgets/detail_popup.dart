@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/link_text.dart';
+import 'package:doc_connect/common_components/widgets/link_text.dart';
 
 import '../../../common_components/widgets/label.dart';
 import '../../../common_components/widgets/map_icon.dart';
@@ -10,7 +10,8 @@ class MedilineCardDetailPopup extends StatefulWidget {
   const MedilineCardDetailPopup({super.key});
 
   @override
-  State<MedilineCardDetailPopup> createState() => _MedilineCardDetailPopupState();
+  State<MedilineCardDetailPopup> createState() =>
+      _MedilineCardDetailPopupState();
 }
 
 class _MedilineCardDetailPopupState extends State<MedilineCardDetailPopup> {
@@ -33,7 +34,9 @@ class _MedilineCardDetailPopupState extends State<MedilineCardDetailPopup> {
             children: [
               Stack(
                 children: [
-                  Container(padding: const EdgeInsets.only(top: 12), child: appointmentDetail()),
+                  Container(
+                      padding: const EdgeInsets.only(top: 12),
+                      child: appointmentDetail()),
                 ],
               ),
               clinicDetail(),
@@ -49,14 +52,16 @@ class _MedilineCardDetailPopupState extends State<MedilineCardDetailPopup> {
       clipper: MyCustomClipperBottom(radius: 8),
       child: Container(
         padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(color: Colors.white60, borderRadius: BorderRadius.circular(8)),
+        decoration: BoxDecoration(
+            color: Colors.white60, borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
             Row(
               children: [
                 const Expanded(
                   flex: 2,
-                  child: ProfileImage(scale: 0.2, image: ImagesConstants.docPlaceholder),
+                  child: ProfileImage(
+                      scale: 0.2, image: ImagesConstants.docPlaceholder),
                 ),
                 const SizedBox(
                   width: 8,
@@ -69,7 +74,8 @@ class _MedilineCardDetailPopupState extends State<MedilineCardDetailPopup> {
                     children: [
                       const Text(
                         "Dr Neetu Sharma",
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                       const SizedBox(
                         height: 8,
@@ -109,7 +115,8 @@ class _MedilineCardDetailPopupState extends State<MedilineCardDetailPopup> {
       clipper: MyCustomClipperTop(radius: 8),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
             const SizedBox(height: 8),
@@ -155,7 +162,8 @@ class _MedilineCardDetailPopupState extends State<MedilineCardDetailPopup> {
                                 ),
                                 Text(
                                   "PAID",
-                                  style: TextStyle(fontSize: 12, color: Colors.white),
+                                  style: TextStyle(
+                                      fontSize: 12, color: Colors.white),
                                 ),
                               ],
                             ),
@@ -196,7 +204,8 @@ class _MedilineCardDetailPopupState extends State<MedilineCardDetailPopup> {
                     ),
                     Text(
                       "Sync",
-                      style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 12),
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColor, fontSize: 12),
                     )
                   ],
                 ),
@@ -248,7 +257,8 @@ class MyCustomClipperBottom extends CustomClipper<Path> {
         radius: Radius.circular(radius.toDouble()),
       ) // Add line p1p2
       ..lineTo(size.width - radius, size.height)
-      ..arcToPoint(Offset(size.width, size.height - radius), radius: Radius.circular(radius))
+      ..arcToPoint(Offset(size.width, size.height - radius),
+          radius: Radius.circular(radius))
       ..lineTo(size.width, 0) // Add line p2p3
       ..close();
     return path;
@@ -268,7 +278,8 @@ class MyCustomClipperTop extends CustomClipper<Path> {
       ..lineTo(0, size.height)
       ..lineTo(size.width, size.height)
       ..lineTo(size.width, radius)
-      ..arcToPoint(Offset(size.width - radius, 0), radius: Radius.circular(radius))
+      ..arcToPoint(Offset(size.width - radius, 0),
+          radius: Radius.circular(radius))
       ..lineTo(radius, 0)
       ..arcToPoint(Offset(0, radius), radius: Radius.circular(radius))
       ..close();

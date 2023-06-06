@@ -1,7 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class CommonUploadReport extends StatelessWidget {
   final bool isDisabled;
@@ -32,7 +32,8 @@ class CommonUploadReport extends StatelessWidget {
               "Upload Doc",
               style: TextStyle(
                   fontSize: 16,
-                  color: isDisabled ? Colors.grey : ColorKonstants.primarySwatch,
+                  color:
+                      isDisabled ? Colors.grey : ColorKonstants.primarySwatch,
                   decoration: TextDecoration.underline,
                   fontWeight: FontWeight.w500),
             ),

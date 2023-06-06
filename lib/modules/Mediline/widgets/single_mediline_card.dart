@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/models/get_appointmens_response.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/mediline_card.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/modules/Mediline/models/get_appointmens_response.dart';
+import 'package:doc_connect/modules/Mediline/widgets/mediline_card.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 import '../../../utils/constants/image_konstants.dart';
 
@@ -103,7 +103,9 @@ class _SingleMedilineCardState extends State<SingleMedilineCard> {
       child: Column(
         children: [
           Text(
-            DateFormat('MMM').format(widget.appointmentDetail.appointment.appointmentDate).toUpperCase(),
+            DateFormat('MMM')
+                .format(widget.appointmentDetail.appointment.appointmentDate)
+                .toUpperCase(),
             style: const TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -111,12 +113,19 @@ class _SingleMedilineCardState extends State<SingleMedilineCard> {
             ),
           ),
           Text(
-            DateFormat('dd').format(widget.appointmentDetail.appointment.appointmentDate).toUpperCase(),
+            DateFormat('dd')
+                .format(widget.appointmentDetail.appointment.appointmentDate)
+                .toUpperCase(),
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),
           Text(
-            DateFormat('yyyy').format(widget.appointmentDetail.appointment.appointmentDate).toUpperCase(),
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: ColorKonstants.subHeadingTextColor),
+            DateFormat('yyyy')
+                .format(widget.appointmentDetail.appointment.appointmentDate)
+                .toUpperCase(),
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: ColorKonstants.subHeadingTextColor),
           ),
         ],
       ),

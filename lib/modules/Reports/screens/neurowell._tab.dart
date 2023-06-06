@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:jatya_patient_mobile/modules/Reports/widgets/neurowell_list_item.dart';
+import 'package:doc_connect/modules/Reports/widgets/neurowell_list_item.dart';
 
 class NeurowellModel {
   String? title;
@@ -10,12 +10,11 @@ class NeurowellModel {
   });
 }
 
-
 class NeuroWellTab extends StatelessWidget {
   final List<NeurowellModel> clinicList1;
   const NeuroWellTab({
-  super.key,
-  required this.clinicList1,
+    super.key,
+    required this.clinicList1,
   });
 
   @override
@@ -23,7 +22,8 @@ class NeuroWellTab extends StatelessWidget {
     return ListView.builder(
       itemBuilder: (context, index) {
         return ClinicListItem(
-          clinicModel: clinicList1[index], imageUrls: const [],
+          clinicModel: clinicList1[index],
+          imageUrls: const [],
         );
       },
       itemCount: clinicList1.length,

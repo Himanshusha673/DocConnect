@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/common_drawer.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/common_components/widgets/common_drawer.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class CommonTabBar extends StatefulWidget {
   final String screenTitle;
@@ -20,7 +20,8 @@ class CommonTabBar extends StatefulWidget {
   State<CommonTabBar> createState() => _CommonTabBarState();
 }
 
-class _CommonTabBarState extends State<CommonTabBar> with TickerProviderStateMixin {
+class _CommonTabBarState extends State<CommonTabBar>
+    with TickerProviderStateMixin {
   late TabController _tabController;
 
   @override

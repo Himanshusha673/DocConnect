@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/prev_reports/post_report_request.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/prev_reports/post_report_response.dart';
+import 'package:doc_connect/modules/Profile/models/prev_reports/post_report_request.dart';
+import 'package:doc_connect/modules/Profile/models/prev_reports/post_report_response.dart';
 
 import '../../../common_components/services/api_requests.dart';
 import '../../../utils/SharePref.dart';
@@ -16,7 +16,8 @@ import '../models/prev_reports/get_previous_reports_response.dart';
 class PreviousReportRepository {
   //get reports
   Future<GetPreviousReportsResponse?> getReports() async {
-    GetPreviousReportsResponse? response = await ApiRequest<String, GetPreviousReportsResponse>().get(
+    GetPreviousReportsResponse? response =
+        await ApiRequest<String, GetPreviousReportsResponse>().get(
       url: ApiConstants.prevReport,
       reponseFromJson: getPreviousReportsResponseFromJson,
     );
@@ -24,8 +25,10 @@ class PreviousReportRepository {
   }
 
   //post report
-  Future<Response<PostReportResponse>?> postReport({required PostReportRequest postReportRequest}) async {
-    Response<PostReportResponse>? response = await ApiRequest<PostReportRequest, PostReportResponse>().post(
+  Future<Response<PostReportResponse>?> postReport(
+      {required PostReportRequest postReportRequest}) async {
+    Response<PostReportResponse>? response =
+        await ApiRequest<PostReportRequest, PostReportResponse>().post(
       url: ApiConstants.prevReport,
       reponseFromJson: postReportResponseFromJson,
       request: postReportRequest,

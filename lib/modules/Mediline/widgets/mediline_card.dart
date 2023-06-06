@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/app_alert_dialog.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/link_text.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/screens/share_mediline_screen.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/mediline_upcoming_appointment_popup_widget.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/start_consultation_alert.dart';
+import 'package:doc_connect/common_components/widgets/app_alert_dialog.dart';
+import 'package:doc_connect/common_components/widgets/link_text.dart';
+import 'package:doc_connect/modules/Mediline/screens/share_mediline_screen.dart';
+import 'package:doc_connect/modules/Mediline/widgets/mediline_upcoming_appointment_popup_widget.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/start_consultation_alert.dart';
 
 import '../../../utils/constants/color_konstants.dart';
 import '../../../utils/constants/image_konstants.dart';

@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class ReportHolder extends StatelessWidget {
   String? url = " ";
@@ -24,7 +24,9 @@ class ReportHolder extends StatelessWidget {
               border: Border.all(color: Colors.grey),
             ),
             padding: const EdgeInsets.only(left: 32, right: 32, bottom: 20),
-            child: reportDoc == null ? Image.network(url!) : Image.file(File(reportDoc!.path)),
+            child: reportDoc == null
+                ? Image.network(url!)
+                : Image.file(File(reportDoc!.path)),
           ),
           Positioned(
             top: 218,
@@ -46,19 +48,22 @@ class ReportHolder extends StatelessWidget {
               width: 343,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                  Text(
-                    value,
-                    textAlign: TextAlign.justify,
-                    style: const TextStyle(color: Colors.black87, fontSize: 16),
-                  ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.delete_rounded,
-                        color: ColorKonstants.primarySwatch,
-                      )),
-                ]),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        value,
+                        textAlign: TextAlign.justify,
+                        style: const TextStyle(
+                            color: Colors.black87, fontSize: 16),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.delete_rounded,
+                            color: ColorKonstants.primarySwatch,
+                          )),
+                    ]),
               ),
             ),
           ),

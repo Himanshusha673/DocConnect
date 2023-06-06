@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/models/get_appointmens_response.dart';
+import 'package:doc_connect/modules/Mediline/models/get_appointmens_response.dart';
 
 import 'mediline_card.dart';
 

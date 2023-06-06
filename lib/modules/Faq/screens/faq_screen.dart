@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/common_drawer.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/link_text.dart';
-import 'package:jatya_patient_mobile/modules/Faq/widgets/faq_qestion_widget.dart';
+import 'package:doc_connect/common_components/widgets/common_drawer.dart';
+import 'package:doc_connect/common_components/widgets/link_text.dart';
+import 'package:doc_connect/modules/Faq/widgets/faq_qestion_widget.dart';
 
 import '../../../common_components/widgets/policy_dialog.dart';
 

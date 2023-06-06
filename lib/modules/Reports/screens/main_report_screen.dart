@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Reports/bloc/get_recent_reports/get_all_reports_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Reports/models/clinic_model.dart';
-import 'package:jatya_patient_mobile/modules/Reports/models/get_recent_report_response_model.dart';
-import 'package:jatya_patient_mobile/modules/Reports/screens/Orthocare_tab.dart';
-import 'package:jatya_patient_mobile/modules/Reports/screens/all_clinics_tab.dart';
-import 'package:jatya_patient_mobile/modules/Reports/screens/neurowell._tab.dart';
+import 'package:doc_connect/modules/Reports/bloc/get_recent_reports/get_all_reports_bloc.dart';
+import 'package:doc_connect/modules/Reports/models/clinic_model.dart';
+import 'package:doc_connect/modules/Reports/models/get_recent_report_response_model.dart';
+import 'package:doc_connect/modules/Reports/screens/Orthocare_tab.dart';
+import 'package:doc_connect/modules/Reports/screens/all_clinics_tab.dart';
+import 'package:doc_connect/modules/Reports/screens/neurowell._tab.dart';
 
 import '../../../common_components/widgets/common_tabbar.dart';
 
@@ -53,39 +53,42 @@ class MainReportsScreen extends StatelessWidget {
         ),
       ],
       tabViewItems: [
-        response?.data == null ? const Center(child: Text('No Reports Found')) :
-        AllClinicTab(
-          clinicList: response!.data!.map((e) => AllClinicModel(
-            date: e.reportDate,
-            title: e.reportName,
-          )).toList(),
-          // [
-          //   AllClinicModel(
-          //     date: 'JAN 01, 2023',
-          //     title: 'Dentle Extraction',
-          //   ),
-          //   AllClinicModel(
-          //     date: 'JAN 01, 2023',
-          //     title: 'Dentle Extraction',
-          //   ),
-          //   AllClinicModel(
-          //     date: 'JAN 01, 2023',
-          //     title: 'Dentle Extraction',
-          //   ),
-          //   AllClinicModel(
-          //     date: 'JAN 01, 2023',
-          //     title: 'Dentle Extraction',
-          //   ),
-          //   AllClinicModel(
-          //     date: 'JAN 01, 2023',
-          //     title: 'Dentle Extraction',
-          //   ),
-          //   AllClinicModel(
-          //     date: 'JAN 01, 2023',
-          //     title: 'Dentle Extraction',
-          //   ),
-          // ],
-        ),
+        response?.data == null
+            ? const Center(child: Text('No Reports Found'))
+            : AllClinicTab(
+                clinicList: response!.data!
+                    .map((e) => AllClinicModel(
+                          date: e.reportDate,
+                          title: e.reportName,
+                        ))
+                    .toList(),
+                // [
+                //   AllClinicModel(
+                //     date: 'JAN 01, 2023',
+                //     title: 'Dentle Extraction',
+                //   ),
+                //   AllClinicModel(
+                //     date: 'JAN 01, 2023',
+                //     title: 'Dentle Extraction',
+                //   ),
+                //   AllClinicModel(
+                //     date: 'JAN 01, 2023',
+                //     title: 'Dentle Extraction',
+                //   ),
+                //   AllClinicModel(
+                //     date: 'JAN 01, 2023',
+                //     title: 'Dentle Extraction',
+                //   ),
+                //   AllClinicModel(
+                //     date: 'JAN 01, 2023',
+                //     title: 'Dentle Extraction',
+                //   ),
+                //   AllClinicModel(
+                //     date: 'JAN 01, 2023',
+                //     title: 'Dentle Extraction',
+                //   ),
+                // ],
+              ),
         NeuroWellTab(
           clinicList1: [
             NeurowellModel(
@@ -102,7 +105,7 @@ class MainReportsScreen extends StatelessWidget {
             ),
           ],
         ),
-       OrthocareTab(
+        OrthocareTab(
           clinicList2: [
             OrthocareModel(
               date: 'JAN 01, 2023',

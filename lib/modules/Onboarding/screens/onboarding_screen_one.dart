@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
 class OnboardingScreenOne extends StatelessWidget {
   const OnboardingScreenOne({Key? key}) : super(key: key);
@@ -29,7 +29,11 @@ class OnboardingScreenOne extends StatelessWidget {
             child: Text(
               "Find the best doctors in your city",
               textAlign: TextAlign.center,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28, color: Colors.black, fontFamily: 'Proxima Nova'),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28,
+                  color: Colors.black,
+                  fontFamily: 'Proxima Nova'),
             ),
           ),
           SizedBox(

@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
-import 'package:jatya_patient_mobile/common_components/widgets/label.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/map_icon.dart';
-import 'package:jatya_patient_mobile/modules/MyJatya/bloc/upcoming_apppointment/upcoming_appointmen_bloc.dart';
-import 'package:jatya_patient_mobile/modules/MyJatya/models/upcoming_appointment_model.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/screens/payment_screen.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/common_components/widgets/label.dart';
+import 'package:doc_connect/common_components/widgets/map_icon.dart';
+import 'package:doc_connect/modules/MyJatya/bloc/upcoming_apppointment/upcoming_appointmen_bloc.dart';
+import 'package:doc_connect/modules/MyJatya/models/upcoming_appointment_model.dart';
+import 'package:doc_connect/modules/NewAppointment/screens/payment_screen.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 import '../../../utils/constants/image_konstants.dart';
 

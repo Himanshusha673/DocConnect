@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/common_drawer.dart';
-import 'package:jatya_patient_mobile/modules/Notifications/bloc/notification_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Notifications/models/notification_model.dart';
-import 'package:jatya_patient_mobile/modules/Notifications/widgets/notificattion_tile.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
+import 'package:doc_connect/common_components/widgets/common_drawer.dart';
+import 'package:doc_connect/modules/Notifications/bloc/notification_bloc.dart';
+import 'package:doc_connect/modules/Notifications/models/notification_model.dart';
+import 'package:doc_connect/modules/Notifications/widgets/notificattion_tile.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -84,7 +84,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     borderRadius: BorderRadiusDirectional.circular(6),
                     color: Colors.white,
                   ),
-                  child:  Text(
+                  child: Text(
                     '${loadedData.length}',
                     style: const TextStyle(
                       color: ColorKonstants.primaryColor,

@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/download_prescription/download_prescription_details.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/latest_prescription.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
-import 'package:jatya_patient_mobile/utils/constants/api_konstants.dart';
+import 'package:doc_connect/modules/MyPrescription/models/download_prescription/download_prescription_details.dart';
+import 'package:doc_connect/modules/MyPrescription/models/latest_prescription.dart';
+import 'package:doc_connect/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
+import 'package:doc_connect/utils/constants/api_konstants.dart';
 import 'package:http/http.dart' as http;
 
 class PrescriptionRepo {

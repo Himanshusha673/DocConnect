@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/map_icon.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/model/get_clinic_detail_response.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/screens/payment_screen.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/services/appointment_repository.dart';
+import 'package:doc_connect/common_components/widgets/map_icon.dart';
+import 'package:doc_connect/modules/NewAppointment/model/get_clinic_detail_response.dart';
+import 'package:doc_connect/modules/NewAppointment/screens/payment_screen.dart';
+import 'package:doc_connect/modules/NewAppointment/services/appointment_repository.dart';
 
 import '../model/appointment/get_slots_response.dart';
 import '../model/doctors_via_location_response.dart';
@@ -12,7 +12,11 @@ class AppointmentCard extends StatefulWidget {
   final AvailableDoctor availableDoctor;
   final SlotDatum slot;
   final DateTime selectedDate;
-  const AppointmentCard({super.key, required this.slot, required this.selectedDate, required this.availableDoctor});
+  const AppointmentCard(
+      {super.key,
+      required this.slot,
+      required this.selectedDate,
+      required this.availableDoctor});
 
   @override
   State<AppointmentCard> createState() => _AppointmentCardState();
@@ -28,7 +32,8 @@ class _AppointmentCardState extends State<AppointmentCard> {
         borderRadius: BorderRadiusDirectional.circular(8),
         clipBehavior: Clip.hardEdge,
         child: FutureBuilder<GetClinicDetailResponse?>(
-            future: AppointmentRepository().getClinicDetail(clinicId: widget.availableDoctor.doctor.clinicId),
+            future: AppointmentRepository().getClinicDetail(
+                clinicId: widget.availableDoctor.doctor.clinicId),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return SizedBox(
@@ -84,7 +89,8 @@ class _AppointmentCardState extends State<AppointmentCard> {
                 children: [
                   Text(
                     clinic.name,
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                   const SizedBox(
                     height: 8,
@@ -218,7 +224,8 @@ class MyCustomClipperBottom extends CustomClipper<Path> {
         radius: Radius.circular(radius.toDouble()),
       ) // Add line p1p2
       ..lineTo(size.width - radius, size.height)
-      ..arcToPoint(Offset(size.width, size.height - radius), radius: Radius.circular(radius))
+      ..arcToPoint(Offset(size.width, size.height - radius),
+          radius: Radius.circular(radius))
       ..lineTo(size.width, 0) // Add line p2p3
       ..close();
     return path;
@@ -238,7 +245,8 @@ class MyCustomClipperTop extends CustomClipper<Path> {
       ..lineTo(0, size.height)
       ..lineTo(size.width, size.height)
       ..lineTo(size.width, radius)
-      ..arcToPoint(Offset(size.width - radius, 0), radius: Radius.circular(radius))
+      ..arcToPoint(Offset(size.width - radius, 0),
+          radius: Radius.circular(radius))
       ..lineTo(radius, 0)
       ..arcToPoint(Offset(0, radius), radius: Radius.circular(radius))
       ..close();

@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/upload_profile_pic_bloc/upload_profile_pic_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Profile/widgets/image_selector_tile_widget.dart';
+import 'package:doc_connect/modules/Profile/bloc/upload_profile_pic_bloc/upload_profile_pic_bloc.dart';
+import 'package:doc_connect/modules/Profile/widgets/image_selector_tile_widget.dart';
 
 import '../../../utils/constants/color_konstants.dart';
 import '../../../utils/constants/image_konstants.dart';
@@ -34,28 +34,29 @@ class PatientCircularProfilePic extends StatelessWidget {
                           Center(
                               child: state.profileImage == null
                                   ? CircleAvatar(
-                                radius: 30,
-                                //backgroundColor: Colors.grey,
-                                backgroundImage: const AssetImage(ImagesConstants.profileimage),
-                                backgroundColor: Colors.transparent,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: Colors.white,
-                                      width: 4.0,
-                                    ),
-                                  ),
-                                ),
-                                // child: Padding(
-                                //   padding: EdgeInsets.all(8.0),
-                                //   child: Icon(
-                                //     Icons.camera_enhance,
-                                //     color: Colors.white,
-                                //     size: 35,
-                                //   ),
-                                // ),
-                              )
+                                      radius: 30,
+                                      //backgroundColor: Colors.grey,
+                                      backgroundImage: const AssetImage(
+                                          ImagesConstants.profileimage),
+                                      backgroundColor: Colors.transparent,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            color: Colors.white,
+                                            width: 4.0,
+                                          ),
+                                        ),
+                                      ),
+                                      // child: Padding(
+                                      //   padding: EdgeInsets.all(8.0),
+                                      //   child: Icon(
+                                      //     Icons.camera_enhance,
+                                      //     color: Colors.white,
+                                      //     size: 35,
+                                      //   ),
+                                      // ),
+                                    )
                                   : Image.file(File(state.profileImage!.path))),
                           Positioned(
                               right: 10,
@@ -143,28 +144,29 @@ class PatientCircularProfilePic extends StatelessWidget {
             child: state.profileImage != null
                 ? null
                 : CircleAvatar(
-              radius: 30,
-              //backgroundColor: Colors.grey,
-              backgroundImage: const AssetImage(ImagesConstants.profileimage),
-              backgroundColor: Colors.transparent,
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 4.0,
+                    radius: 30,
+                    //backgroundColor: Colors.grey,
+                    backgroundImage:
+                        const AssetImage(ImagesConstants.profileimage),
+                    backgroundColor: Colors.transparent,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 4.0,
+                        ),
+                      ),
+                    ),
+                    // child: Padding(
+                    //   padding: EdgeInsets.all(8.0),
+                    //   child: Icon(
+                    //     Icons.camera_enhance,
+                    //     color: Colors.white,
+                    //     size: 35,
+                    //   ),
+                    // ),
                   ),
-                ),
-              ),
-              // child: Padding(
-              //   padding: EdgeInsets.all(8.0),
-              //   child: Icon(
-              //     Icons.camera_enhance,
-              //     color: Colors.white,
-              //     size: 35,
-              //   ),
-              // ),
-            ),
           ));
     });
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/success_alert_dialog.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/previous_report_bloc/previousreport_bloc.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/start_consultation_alert.dart';
+import 'package:doc_connect/common_components/widgets/success_alert_dialog.dart';
+import 'package:doc_connect/modules/Profile/bloc/previous_report_bloc/previousreport_bloc.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/start_consultation_alert.dart';
 
 import '../../models/get_all_prev_reports/get_all_prev_repo.dart';
 import '../../widgets/previousReport/previous_report_form.dart';
@@ -25,7 +25,11 @@ class _PreviousReportTabState extends State<PreviousReportTab> {
   String vaccinDate2 = "dd/mm/yyyy";
 
   Future _selectDate(BuildContext context, String vaccinationDatevalue) async {
-    DateTime? datePicker = await showDatePicker(context: context, initialDate: _date, firstDate: DateTime(1947), lastDate: DateTime(2050));
+    DateTime? datePicker = await showDatePicker(
+        context: context,
+        initialDate: _date,
+        firstDate: DateTime(1947),
+        lastDate: DateTime(2050));
 
     if (datePicker != null && datePicker != _date) {
       String selectedDate = datePicker.toString();
@@ -55,8 +59,12 @@ class _PreviousReportTabState extends State<PreviousReportTab> {
       child: BlocListener<PreviousReportBloc, PreviousReportState>(
         listener: (context, state) {
           if (state is PreviousReportUploadedState) {
-            showPopup(context: context, child: const SuccessAlertDialog(message: "Report Uploaded"));
-            context.read<PreviousReportBloc>().add(const PreviousReportInitialEvent());
+            showPopup(
+                context: context,
+                child: const SuccessAlertDialog(message: "Report Uploaded"));
+            context
+                .read<PreviousReportBloc>()
+                .add(const PreviousReportInitialEvent());
           }
         },
         child: BlocBuilder<PreviousReportBloc, PreviousReportState>(

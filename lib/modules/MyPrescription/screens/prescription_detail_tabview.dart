@@ -2,15 +2,15 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/bloc/prescription_deatils/prescription_details_bloc.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/latest_prescription.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/screens/about_the_clinic.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/screens/doctors_profile.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/screens/prescription.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/screens/report.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/modules/MyPrescription/bloc/prescription_deatils/prescription_details_bloc.dart';
+import 'package:doc_connect/modules/MyPrescription/models/latest_prescription.dart';
+import 'package:doc_connect/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
+import 'package:doc_connect/modules/MyPrescription/screens/about_the_clinic.dart';
+import 'package:doc_connect/modules/MyPrescription/screens/doctors_profile.dart';
+import 'package:doc_connect/modules/MyPrescription/screens/prescription.dart';
+import 'package:doc_connect/modules/MyPrescription/screens/report.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PrescriptionDetailTabview extends StatefulWidget {

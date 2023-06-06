@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/error_alert_dialog.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/password_textfield.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/forgot_password/verify_forgot_password_request.dart';
-import 'package:jatya_patient_mobile/modules/Auth/services/auth_repository.dart';
-import 'package:jatya_patient_mobile/modules/Auth/services/validators.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/start_consultation_alert.dart';
-
+import 'package:doc_connect/common_components/widgets/error_alert_dialog.dart';
+import 'package:doc_connect/common_components/widgets/password_textfield.dart';
+import 'package:doc_connect/modules/Auth/model/forgot_password/verify_forgot_password_request.dart';
+import 'package:doc_connect/modules/Auth/services/auth_repository.dart';
+import 'package:doc_connect/modules/Auth/services/validators.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/start_consultation_alert.dart';
 import 'login_screen.dart';
 import '../widgets/custom_elevated_button.dart';
 import '../widgets/custom_text_button.dart';
@@ -15,15 +14,18 @@ import '../widgets/terms_and_copyright_widget.dart';
 class CreateNewPasswordScreen extends StatefulWidget {
   final String validationId;
   final String otp;
-  const CreateNewPasswordScreen({super.key, required this.validationId, required this.otp});
+  const CreateNewPasswordScreen(
+      {super.key, required this.validationId, required this.otp});
 
   @override
-  State<CreateNewPasswordScreen> createState() => _CreateNewPasswordScreenState();
+  State<CreateNewPasswordScreen> createState() =>
+      _CreateNewPasswordScreenState();
 }
 
 class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
   final TextEditingController _newPasswordController = TextEditingController();
-  final TextEditingController _confirmNewPasswordController = TextEditingController();
+  final TextEditingController _confirmNewPasswordController =
+      TextEditingController();
 
   final formGlobalKey = GlobalKey<FormState>();
   @override
@@ -49,7 +51,8 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                   textEditingController: _newPasswordController,
                   labelText: 'NEW PASSWORD',
                   hintText: 'New Password',
-                  validator: (password) => Validators.passwordValidator(password),
+                  validator: (password) =>
+                      Validators.passwordValidator(password),
                   onchanged: (String) {},
                 ),
                 SizedBox(
@@ -59,7 +62,8 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                   textEditingController: _confirmNewPasswordController,
                   labelText: 'CONFIRM NEW PASSWORD',
                   hintText: 'Confirm New Password',
-                  validator: (password) => Validators.passwordValidator(password),
+                  validator: (password) =>
+                      Validators.passwordValidator(password),
                   onchanged: (String) {},
                 ),
                 SizedBox(
@@ -68,24 +72,33 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                 CustomElevatedButton(
                   onPressed: () async {
                     if (formGlobalKey.currentState!.validate()) {
-                      if (_newPasswordController.text == _confirmNewPasswordController.text) {
+                      if (_newPasswordController.text ==
+                          _confirmNewPasswordController.text) {
                         final res = await AuthRepository().verifyForgotPassword(
-                            verifyForgotPasswordRequest: VerifyForgotPasswordRequest(
-                                otp: widget.otp, validationId: widget.validationId, password: _confirmNewPasswordController.text));
-                        if (res != null && res.error==null) {
+                            verifyForgotPasswordRequest:
+                                VerifyForgotPasswordRequest(
+                                    otp: widget.otp,
+                                    validationId: widget.validationId,
+                                    password:
+                                        _confirmNewPasswordController.text));
+                        if (res != null && res.error == null) {
                           Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const LoginScreen(),
-                            ), (Route<dynamic> route) => false
-                          );
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginScreen(),
+                              ),
+                              (Route<dynamic> route) => false);
+                        } else if (res != null && res.error != null) {
+                          showPopup(
+                              context: context,
+                              child:
+                                  const ErrorAlertDialog(error: "Invalid Otp"));
                         }
-                        else if(res!=null && res.error!=null){
-                          showPopup(context: context, child: const ErrorAlertDialog(error: "Invalid Otp"));
-                        }
-                      }
-                      else {
-                        showPopup(context: context, child: const ErrorAlertDialog(error: "Passwords do not match"));
+                      } else {
+                        showPopup(
+                            context: context,
+                            child: const ErrorAlertDialog(
+                                error: "Passwords do not match"));
                       }
                     }
                   },

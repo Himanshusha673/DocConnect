@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/update_patient_prof_bloc/upadte_pat_state.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/update_patient_prof_bloc/update_pati_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/allergies/update_allergy.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/update_user_model.dart';
-import 'package:jatya_patient_mobile/modules/Profile/screens/patient_update_screen_tabs/allergies_tab.dart';
-import 'package:jatya_patient_mobile/modules/Profile/screens/patient_update_screen_tabs/demographic_tab.dart';
-import 'package:jatya_patient_mobile/modules/Profile/screens/patient_update_screen_tabs/previous_reports_tab.dart';
-import 'package:jatya_patient_mobile/modules/Profile/screens/patient_update_screen_tabs/vaccination_tab.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
+import 'package:doc_connect/modules/Profile/bloc/update_patient_prof_bloc/upadte_pat_state.dart';
+import 'package:doc_connect/modules/Profile/bloc/update_patient_prof_bloc/update_pati_bloc.dart';
+import 'package:doc_connect/modules/Profile/models/allergies/update_allergy.dart';
+import 'package:doc_connect/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
+import 'package:doc_connect/modules/Profile/models/update_user_model.dart';
+import 'package:doc_connect/modules/Profile/screens/patient_update_screen_tabs/allergies_tab.dart';
+import 'package:doc_connect/modules/Profile/screens/patient_update_screen_tabs/demographic_tab.dart';
+import 'package:doc_connect/modules/Profile/screens/patient_update_screen_tabs/previous_reports_tab.dart';
+import 'package:doc_connect/modules/Profile/screens/patient_update_screen_tabs/vaccination_tab.dart';
+import 'package:doc_connect/utils/SharePref.dart';
 
 import '../../../utils/constants/color_konstants.dart';
 import '../bloc/update_patient_prof_bloc/update_pat_event.dart';

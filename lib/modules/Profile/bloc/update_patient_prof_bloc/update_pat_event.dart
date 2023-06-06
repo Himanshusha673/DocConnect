@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/allergies/update_allergy.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/update_user_model.dart';
+import 'package:doc_connect/modules/Profile/models/allergies/update_allergy.dart';
+import 'package:doc_connect/modules/Profile/models/update_user_model.dart';
 
 abstract class PatientUpdateEvent extends Equatable {
   const PatientUpdateEvent();

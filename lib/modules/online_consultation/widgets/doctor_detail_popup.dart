@@ -1,34 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/model/doctor/doctor-detail_response.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/model/doctors_via_location_response.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/services/appointment_repository.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/doctor_card.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/dropdown.dart';
-import 'package:jatya_patient_mobile/utils/constants/color_konstants.dart';
-import 'package:jatya_patient_mobile/utils/constants/image_konstants.dart';
+import 'package:doc_connect/modules/NewAppointment/model/doctor/doctor-detail_response.dart';
+import 'package:doc_connect/modules/NewAppointment/model/doctors_via_location_response.dart';
+import 'package:doc_connect/modules/NewAppointment/services/appointment_repository.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/doctor_card.dart';
+import 'package:doc_connect/common_components/widgets/dropdown.dart';
+import 'package:doc_connect/utils/constants/color_konstants.dart';
+import 'package:doc_connect/utils/constants/image_konstants.dart';
 
 class DoctorDetailPopupWidget extends StatefulWidget {
   final String doctorId;
   final Doctor doctor;
   final UserData docUser;
-  const DoctorDetailPopupWidget({super.key, required this.doctorId, required this.docUser, required this.doctor});
+  const DoctorDetailPopupWidget(
+      {super.key,
+      required this.doctorId,
+      required this.docUser,
+      required this.doctor});
 
   @override
-  State<DoctorDetailPopupWidget> createState() => _DoctorDetailPopupWidgetState();
+  State<DoctorDetailPopupWidget> createState() =>
+      _DoctorDetailPopupWidgetState();
 }
 
 class _DoctorDetailPopupWidgetState extends State<DoctorDetailPopupWidget> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<DoctorDetailResponse?>(
-        future: AppointmentRepository().getDcotorDetail(doctorId: widget.doctorId),
+        future:
+            AppointmentRepository().getDcotorDetail(doctorId: widget.doctorId),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const CircularProgressIndicator();
           }
           DoctorDetail doctor = snapshot.data!.data.doctor;
-          List<DoctorWorkingHour> workingHourList = snapshot.data!.data.workingHours;
+          List<DoctorWorkingHour> workingHourList =
+              snapshot.data!.data.workingHours;
           return Stack(
             children: [
               Padding(
@@ -122,7 +129,9 @@ class _DoctorDetailPopupWidgetState extends State<DoctorDetailPopupWidget> {
         ),
         title: Text(
           title,
-          style: TextStyle(fontSize: 14, color: ColorKonstants.subHeadingTextColor.withOpacity(0.6)),
+          style: TextStyle(
+              fontSize: 14,
+              color: ColorKonstants.subHeadingTextColor.withOpacity(0.6)),
         ),
       );
     }
@@ -130,10 +139,12 @@ class _DoctorDetailPopupWidgetState extends State<DoctorDetailPopupWidget> {
     return Column(
       children: [
         const SizedBox(height: 8),
-        detailTile(title: widget.docUser.phoneNumber, iconData: Icons.phone_outlined),
+        detailTile(
+            title: widget.docUser.phoneNumber, iconData: Icons.phone_outlined),
         detailTile(title: widget.docUser.email, iconData: Icons.email_outlined),
         detailTile(
-          title: "${widget.docUser.address}, ${widget.docUser.city}, ${widget.docUser.state}, ${widget.docUser.country}",
+          title:
+              "${widget.docUser.address}, ${widget.docUser.city}, ${widget.docUser.state}, ${widget.docUser.country}",
           iconData: Icons.location_on_outlined,
         ),
         const Divider(
@@ -161,7 +172,8 @@ class _DoctorDetailPopupWidgetState extends State<DoctorDetailPopupWidget> {
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
-                      color: ColorKonstants.subHeadingTextColor.withOpacity(0.6),
+                      color:
+                          ColorKonstants.subHeadingTextColor.withOpacity(0.6),
                     ),
                   ),
                 ],
@@ -176,7 +188,9 @@ class _DoctorDetailPopupWidgetState extends State<DoctorDetailPopupWidget> {
               Column(
                   children: doctorWorkingHours
                       .map((e) => timingTile(
-                          day: e.weekday, time: "${DateFormat('hh:mm a').format(e.startTime)} - ${DateFormat('hh:mm a').format(e.endTime)}"))
+                          day: e.weekday,
+                          time:
+                              "${DateFormat('hh:mm a').format(e.startTime)} - ${DateFormat('hh:mm a').format(e.endTime)}"))
                       .toList()),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -189,7 +203,10 @@ class _DoctorDetailPopupWidgetState extends State<DoctorDetailPopupWidget> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         "Close",
-                        style: TextStyle(fontWeight: FontWeight.w700, decoration: TextDecoration.underline, color: ColorKonstants.textcolor),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            decoration: TextDecoration.underline,
+                            color: ColorKonstants.textcolor),
                       ),
                     ),
                   )
@@ -216,7 +233,10 @@ class _DoctorDetailPopupWidgetState extends State<DoctorDetailPopupWidget> {
             width: MediaQuery.of(context).size.width * 0.25,
             child: Text(
               day,
-              style: TextStyle(fontWeight: FontWeight.bold, color: ColorKonstants.subHeadingTextColor.withOpacity(0.6), fontSize: 12),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: ColorKonstants.subHeadingTextColor.withOpacity(0.6),
+                  fontSize: 12),
             ),
           ),
           SizedBox(
@@ -224,7 +244,9 @@ class _DoctorDetailPopupWidgetState extends State<DoctorDetailPopupWidget> {
             child: Text(
               time,
               textAlign: TextAlign.left,
-              style: TextStyle(color: ColorKonstants.subHeadingTextColor.withOpacity(0.6), fontSize: 12),
+              style: TextStyle(
+                  color: ColorKonstants.subHeadingTextColor.withOpacity(0.6),
+                  fontSize: 12),
             ),
           )
         ],

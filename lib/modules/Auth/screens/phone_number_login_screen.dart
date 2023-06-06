@@ -2,17 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/services/form_submission_status.dart';
-import 'package:jatya_patient_mobile/modules/Auth/bloc/login_phone_bloc/login_phone_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Auth/model/login/mfa_phone_request.dart';
-import 'package:jatya_patient_mobile/modules/Auth/screens/enter_otp_screen.dart';
+import 'package:doc_connect/common_components/services/form_submission_status.dart';
+import 'package:doc_connect/modules/Auth/bloc/login_phone_bloc/login_phone_bloc.dart';
+import 'package:doc_connect/modules/Auth/model/login/mfa_phone_request.dart';
+import 'package:doc_connect/modules/Auth/screens/enter_otp_screen.dart';
 
-import 'package:jatya_patient_mobile/modules/Auth/services/auth_repository.dart';
-import 'package:jatya_patient_mobile/modules/Auth/services/validators.dart';
-import 'package:jatya_patient_mobile/modules/Auth/widgets/icon_title_widget.dart';
+import 'package:doc_connect/modules/Auth/services/auth_repository.dart';
+import 'package:doc_connect/modules/Auth/services/validators.dart';
+import 'package:doc_connect/modules/Auth/widgets/icon_title_widget.dart';
 
-import 'package:jatya_patient_mobile/modules/Auth/widgets/phone_number_textfield.dart';
-import 'package:jatya_patient_mobile/modules/MyJatya/screens/MyJatya.dart';
+import 'package:doc_connect/modules/Auth/widgets/phone_number_textfield.dart';
+import 'package:doc_connect/modules/MyJatya/screens/MyJatya.dart';
 
 import '../../../common_components/widgets/error_alert_dialog.dart';
 import '../../../common_components/widgets/policy_dialog.dart';
@@ -64,8 +64,9 @@ class _PhoneNumberLoginScreenState extends State<PhoneNumberLoginScreen> {
                   screenTitle: 'Login using Mobile Number',
                   buttonText: 'Submit',
                   onButtonPressed: (context1, String enteredOtp) async {
-                    final value =
-                        await AuthRepository().mfaPhone(mfaPhoneRequest: MfaPhoneRequest(otp: enteredOtp, validationId: state.validationId));
+                    final value = await AuthRepository().mfaPhone(
+                        mfaPhoneRequest: MfaPhoneRequest(
+                            otp: enteredOtp, validationId: state.validationId));
                     if (value?.response != null) {
                       Navigator.pushReplacement(
                         context,
@@ -74,7 +75,10 @@ class _PhoneNumberLoginScreenState extends State<PhoneNumberLoginScreen> {
                         ),
                       );
                     } else {
-                      showPopup(context: context, child: ErrorAlertDialog(error: value?.error ?? "Invalid otp"));
+                      showPopup(
+                          context: context,
+                          child: ErrorAlertDialog(
+                              error: value?.error ?? "Invalid otp"));
                     }
                     return "";
                   },
@@ -103,20 +107,23 @@ class _PhoneNumberLoginScreenState extends State<PhoneNumberLoginScreen> {
                           padding: const EdgeInsets.only(left: 10.0),
                           child: SizedBox(
                             width: width * 0.65,
-                            child: BlocBuilder<LoginPhoneBloc, LoginPhoneState>(builder: (context, state) {
+                            child: BlocBuilder<LoginPhoneBloc, LoginPhoneState>(
+                                builder: (context, state) {
                               return Form(
                                 key: formGlobalKey,
                                 child: TextFormField(
-                                  validator: (phone) => Validators.phoneValidator(phone),
+                                  validator: (phone) =>
+                                      Validators.phoneValidator(phone),
                                   controller: _phoneNumberController,
                                   decoration: const InputDecoration(
                                     hintText: 'Phone Number',
                                   ),
-                                  onChanged: (value) => context.read<LoginPhoneBloc>().add(
-                                        LoginPhoneNumberChanged(
-                                          phoneNumber: value,
-                                        ),
-                                      ),
+                                  onChanged: (value) =>
+                                      context.read<LoginPhoneBloc>().add(
+                                            LoginPhoneNumberChanged(
+                                              phoneNumber: value,
+                                            ),
+                                          ),
                                   keyboardType: TextInputType.number,
                                   // inputFormatters: <TextInputFormatter>[
                                   //   FilteringTextInputFormatter.digitsOnly
@@ -155,12 +162,15 @@ class _PhoneNumberLoginScreenState extends State<PhoneNumberLoginScreen> {
                       },
                       child: BlocBuilder<LoginPhoneBloc, LoginPhoneState>(
                         builder: (context, state) {
-                          if (state.formStatus is InitialFormStatus || state.formStatus is FormSubmissionFailed) {
+                          if (state.formStatus is InitialFormStatus ||
+                              state.formStatus is FormSubmissionFailed) {
                             return CustomElevatedButton(
                               onPressed: () {
                                 print(formGlobalKey.currentState!.validate());
                                 if (formGlobalKey.currentState!.validate()) {
-                                  context.read<LoginPhoneBloc>().add(const LoginPhoneSubmitted());
+                                  context
+                                      .read<LoginPhoneBloc>()
+                                      .add(const LoginPhoneSubmitted());
                                 }
                               },
                               horizontalWidth: width * 0.35,

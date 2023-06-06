@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/models/get_appointmens_response.dart';
-import 'package:jatya_patient_mobile/modules/Mediline/widgets/clinic_appointments_tabview.dart';
+import 'package:doc_connect/modules/Mediline/models/get_appointmens_response.dart';
+import 'package:doc_connect/modules/Mediline/widgets/clinic_appointments_tabview.dart';
 
 import '../../NewAppointment/model/get_clinic_detail_response.dart';
 
@@ -17,12 +17,14 @@ class MedilineTabView extends StatefulWidget {
   State<MedilineTabView> createState() => _MedilineTabViewState();
 }
 
-class _MedilineTabViewState extends State<MedilineTabView> with SingleTickerProviderStateMixin {
+class _MedilineTabViewState extends State<MedilineTabView>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: (widget.clinicList.length + 1));
+    _tabController =
+        TabController(vsync: this, length: (widget.clinicList.length + 1));
 
     super.initState();
   }
@@ -62,7 +64,10 @@ class _MedilineTabViewState extends State<MedilineTabView> with SingleTickerProv
                 ClinicAppointmentsTabView(appointments: widget.appointments),
                 ...widget.clinicList
                     .map((e) => ClinicAppointmentsTabView(
-                        appointments: widget.appointments.where((element) => element.appointment.clinicId == e.id).toList()))
+                        appointments: widget.appointments
+                            .where((element) =>
+                                element.appointment.clinicId == e.id)
+                            .toList()))
                     .toList(),
               ],
             ),

@@ -1,11 +1,12 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:doc_connect/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
 import 'package:equatable/equatable.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/download_prescription/download_prescription_details.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/services/prescription_services.dart';
-import 'package:jatya_patient_mobile/utils/SharePref.dart';
+import 'package:doc_connect/modules/MyPrescription/models/download_prescription/download_prescription_details.dart';
+import 'package:doc_connect/modules/MyPrescription/models/prescription_deatils/prescription_details.dart';
+import 'package:doc_connect/modules/MyPrescription/services/prescription_services.dart';
+import 'package:doc_connect/utils/SharePref.dart';
 
 part 'prescription_details_bloc_event.dart';
 part 'prescription_details_bloc_state.dart';

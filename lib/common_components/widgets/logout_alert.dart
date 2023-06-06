@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/app_alert_dialog.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/link_text.dart';
-import 'package:jatya_patient_mobile/modules/Auth/screens/login_screen.dart';
+import 'package:doc_connect/common_components/widgets/app_alert_dialog.dart';
+import 'package:doc_connect/common_components/widgets/link_text.dart';
+import 'package:doc_connect/modules/Auth/screens/login_screen.dart';
 
 import '../../utils/SharePref.dart';
 

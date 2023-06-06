@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/patientBloc/patient_bloc.dart';
-import 'package:jatya_patient_mobile/modules/Profile/bloc/patientBloc/patient_state.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/allergies/update_allergy.dart';
-import 'package:jatya_patient_mobile/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
-import 'package:jatya_patient_mobile/modules/Profile/widgets/expandable.dart';
+import 'package:doc_connect/modules/Profile/bloc/patientBloc/patient_bloc.dart';
+import 'package:doc_connect/modules/Profile/bloc/patientBloc/patient_state.dart';
+import 'package:doc_connect/modules/Profile/models/allergies/update_allergy.dart';
+import 'package:doc_connect/modules/Profile/models/get_specific_patient_by_id/get_sprecific_patient_by_id.dart';
+import 'package:doc_connect/modules/Profile/widgets/expandable.dart';
 
 class AllergiesTab extends StatefulWidget {
   final GetSpecificPatientAllergydata allergy;

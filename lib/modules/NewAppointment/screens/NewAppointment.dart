@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/services/form_submission_status.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/common_drawer.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/error_alert_dialog.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/bloc/appointment_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/date_picker.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/dropdown.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/screens/new_appointment_result.dart';
-import 'package:jatya_patient_mobile/modules/NewAppointment/services/appointment_repository.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/start_consultation_alert.dart';
+import 'package:doc_connect/common_components/services/form_submission_status.dart';
+import 'package:doc_connect/common_components/widgets/common_drawer.dart';
+import 'package:doc_connect/common_components/widgets/error_alert_dialog.dart';
+import 'package:doc_connect/modules/NewAppointment/bloc/appointment_bloc.dart';
+import 'package:doc_connect/common_components/widgets/date_picker.dart';
+import 'package:doc_connect/common_components/widgets/dropdown.dart';
+import 'package:doc_connect/modules/NewAppointment/screens/new_appointment_result.dart';
+import 'package:doc_connect/modules/NewAppointment/services/appointment_repository.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/start_consultation_alert.dart';
 
 import '../widgets/distance_slider.dart';
 
@@ -25,7 +25,8 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
     return RepositoryProvider(
       create: (context) => AppointmentRepository(),
       child: BlocProvider(
-        create: (context) => AppointmentBloc(appointmentRepository: context.read<AppointmentRepository>()),
+        create: (context) => AppointmentBloc(
+            appointmentRepository: context.read<AppointmentRepository>()),
         child: Scaffold(
           appBar: AppBar(
             title: const Text('New Appointment'),
@@ -104,15 +105,21 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
           child: ElevatedButton(
             onPressed: () {
               if (state.appointmentDate == null && state.isEmergency) {
-                showPopup(context: context, child: const ErrorAlertDialog(error: "Select date"));
+                showPopup(
+                    context: context,
+                    child: const ErrorAlertDialog(error: "Select date"));
                 return;
               }
               if (state.speciality == null) {
-                showPopup(context: context, child: const ErrorAlertDialog(error: "Select date"));
+                showPopup(
+                    context: context,
+                    child: const ErrorAlertDialog(error: "Select date"));
                 return;
               }
 
-              context.read<AppointmentBloc>().add(const ShowAvailableDoctorsEvent());
+              context
+                  .read<AppointmentBloc>()
+                  .add(const ShowAvailableDoctorsEvent());
             },
             child: const Text("Show Available Doctors"),
           ),
@@ -129,7 +136,9 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
             hint: 'select Gender',
             selectedItem: state.doctorGender,
             options: state.genderOptions,
-            onChanged: (value) => context.read<AppointmentBloc>().add(DoctorGenderChangedEvent(gender: value)));
+            onChanged: (value) => context
+                .read<AppointmentBloc>()
+                .add(DoctorGenderChangedEvent(gender: value)));
       },
     );
   }
@@ -137,7 +146,7 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
   Widget _isEmergencyCheckBox(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 24),
-      width: MediaQuery.of(context).size.width*0.35,
+      width: MediaQuery.of(context).size.width * 0.35,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -145,7 +154,8 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
             builder: (context, state) {
               return Checkbox(
                   value: state.isEmergency,
-                  onChanged: (value) => context.read<AppointmentBloc>().add(IsEmergencyChangedEvent(isEmergency: value ?? false)));
+                  onChanged: (value) => context.read<AppointmentBloc>().add(
+                      IsEmergencyChangedEvent(isEmergency: value ?? false)));
             },
           ),
           const Text('Emergency')
@@ -165,7 +175,9 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
                 title: 'APPOINTMENT DATE',
                 isMandatory: true,
                 initialDate: state.appointmentDate?.toString(),
-                onChanged: (value) => context.read<AppointmentBloc>().add(AppointmentDateChangedEvent(dateTime: value))),
+                onChanged: (value) => context
+                    .read<AppointmentBloc>()
+                    .add(AppointmentDateChangedEvent(dateTime: value))),
           ),
         );
       },
@@ -198,7 +210,9 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
             isMandatory: true,
             selectedItem: state.speciality,
             options: state.specialityOptions,
-            onChanged: (value) => context.read<AppointmentBloc>().add(SpecialityChangedEvent(speciality: value)));
+            onChanged: (value) => context
+                .read<AppointmentBloc>()
+                .add(SpecialityChangedEvent(speciality: value)));
       },
     );
   }

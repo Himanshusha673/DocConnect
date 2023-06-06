@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/latest_prescription.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/screens/prescription_detail_tabview.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/widgets/clinic_list_item.dart';
+import 'package:doc_connect/modules/MyPrescription/models/latest_prescription.dart';
+import 'package:doc_connect/modules/MyPrescription/screens/prescription_detail_tabview.dart';
+import 'package:doc_connect/modules/MyPrescription/widgets/clinic_list_item.dart';
 
 class AllClinicTab extends StatelessWidget {
   List<GetAllPrescriptionData> prescriptionList;

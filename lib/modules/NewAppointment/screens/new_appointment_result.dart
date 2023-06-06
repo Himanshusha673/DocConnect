@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:jatya_patient_mobile/modules/online_consultation/widgets/doctor_card.dart';
+import 'package:doc_connect/modules/online_consultation/widgets/doctor_card.dart';
 
 import '../model/doctors_via_location_response.dart';
 
@@ -24,7 +24,8 @@ class DoctorsListWidget extends StatelessWidget {
             children: [
               Text(
                 "${doctors.length} doctors available on ${DateFormat.yMMMEd().format(date)}",
-                style: const TextStyle(fontWeight: FontWeight.w700, color: Colors.black54),
+                style: const TextStyle(
+                    fontWeight: FontWeight.w700, color: Colors.black54),
               ),
             ],
           ),

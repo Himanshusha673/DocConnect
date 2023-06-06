@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jatya_patient_mobile/common_components/widgets/common_tabbar.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/bloc/myPrescriptionBloc/my_prescription_bloc.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/models/latest_prescription.dart';
-import 'package:jatya_patient_mobile/modules/MyPrescription/screens/all_clinics_tab.dart';
+import 'package:doc_connect/common_components/widgets/common_tabbar.dart';
+import 'package:doc_connect/modules/MyPrescription/bloc/myPrescriptionBloc/my_prescription_bloc.dart';
+import 'package:doc_connect/modules/MyPrescription/models/latest_prescription.dart';
+import 'package:doc_connect/modules/MyPrescription/screens/all_clinics_tab.dart';
 
 class MyPrescriptionScreen extends StatelessWidget {
   const MyPrescriptionScreen({super.key});
