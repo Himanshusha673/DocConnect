@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.5" height="20.66" viewBox="0 0 18.5 20.66">
+  <g id="event-schedule" transform="translate(0.25 0.25)">
+    <path id="Path_39054" data-name="Path 39054" d="M20.724,27.948a6.1,6.1,0,1,1,6.1-6.1A6.1,6.1,0,0,1,20.724,27.948Zm0-10.673A4.574,4.574,0,1,0,25.3,21.849,4.574,4.574,0,0,0,20.724,17.275Z" transform="translate(-8.823 -7.788)" fill="#007bc7" stroke="#007bc7" stroke-width="0.5"/>
+    <path id="Path_39055" data-name="Path 39055" d="M24.475,25.586,22.5,23.612V20.25h1.525v2.737l1.525,1.525Z" transform="translate(-11.109 -8.956)" fill="#007bc7"/>
+    <path id="Path_39056" data-name="Path 39056" d="M21.738,5.117A1.435,1.435,0,0,0,20.3,3.683H17.428V2.25H15.992V3.683H10.246V2.25H8.809V3.683H5.936A1.435,1.435,0,0,0,4.5,5.117V19.452a1.435,1.435,0,0,0,1.436,1.433H8.809V19.452H5.936V5.117H8.809V6.55h1.436V5.117h5.746V6.55h1.436V5.117H20.3v4.3h1.436Z" transform="translate(-4.5 -2.25)" fill="#007bc7" stroke="#007bc7" stroke-width="0.5"/>
+  </g>
+</svg>
